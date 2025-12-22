@@ -22,7 +22,7 @@ export default function AboutPreview() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-              
+
               {/* Decorative border */}
               <motion.div
                 className="absolute inset-0 border-2 border-[#4A5D4E]/20 -m-4 pointer-events-none"
