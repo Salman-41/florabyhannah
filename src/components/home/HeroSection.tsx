@@ -18,7 +18,7 @@ export default function HeroSection({
   subtitle = "Custom Wedding Floral Design in Charleston",
   ctaText = "View Portfolio",
   ctaLink = "/portfolio",
-  backgroundImage = "/images/hero-bg.jpg",
+  backgroundImage = "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop",
 }: HeroSectionProps) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({

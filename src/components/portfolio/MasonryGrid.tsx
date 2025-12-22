@@ -31,7 +31,8 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Garden Romance",
     slug: { current: "garden-romance" },
     category: "Summer Weddings",
-    mainImage: "/images/portfolio-1.jpg",
+    mainImage:
+      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
     tags: ["outdoor", "garden"],
   },
   {
@@ -39,7 +40,8 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Bridal Cascade",
     slug: { current: "bridal-cascade" },
     category: "Bouquets",
-    mainImage: "/images/portfolio-2.jpg",
+    mainImage:
+      "https://images.unsplash.com/photo-1561128290-006dc4827e9a?q=80&w=1974&auto=format&fit=crop",
     tags: ["bridal", "cascade"],
   },
   {
@@ -47,7 +49,8 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Ceremony Arch",
     slug: { current: "ceremony-arch" },
     category: "Installations",
-    mainImage: "/images/portfolio-3.jpg",
+    mainImage:
+      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop",
     tags: ["arch", "ceremony"],
   },
   {
@@ -55,7 +58,8 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Elegant Tables",
     slug: { current: "elegant-tables" },
     category: "Centerpieces",
-    mainImage: "/images/portfolio-4.jpg",
+    mainImage:
+      "https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=2080&auto=format&fit=crop",
     tags: ["table", "reception"],
   },
   {
@@ -63,7 +67,8 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Sunset Ceremony",
     slug: { current: "sunset-ceremony" },
     category: "Ceremony",
-    mainImage: "/images/portfolio-5.jpg",
+    mainImage:
+      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2070&auto=format&fit=crop",
     tags: ["sunset", "outdoor"],
   },
   {
@@ -71,7 +76,8 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Blush Bouquet",
     slug: { current: "blush-bouquet" },
     category: "Bouquets",
-    mainImage: "/images/portfolio-6.jpg",
+    mainImage:
+      "https://images.unsplash.com/photo-1525258946800-98cfd641d0de?q=80&w=2074&auto=format&fit=crop",
     tags: ["blush", "roses"],
   },
   {
@@ -79,7 +85,8 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Garden Party",
     slug: { current: "garden-party" },
     category: "Summer Weddings",
-    mainImage: "/images/portfolio-7.jpg",
+    mainImage:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
     tags: ["garden", "summer"],
   },
   {
@@ -87,7 +94,8 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Floral Wall",
     slug: { current: "floral-wall" },
     category: "Installations",
-    mainImage: "/images/portfolio-8.jpg",
+    mainImage:
+      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2073&auto=format&fit=crop",
     tags: ["wall", "backdrop"],
   },
   {
@@ -95,7 +103,8 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Classic White",
     slug: { current: "classic-white" },
     category: "Centerpieces",
-    mainImage: "/images/portfolio-9.jpg",
+    mainImage:
+      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop",
     tags: ["white", "classic"],
   },
   {
@@ -103,7 +112,8 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Wildflower Dreams",
     slug: { current: "wildflower-dreams" },
     category: "Bouquets",
-    mainImage: "/images/portfolio-10.jpg",
+    mainImage:
+      "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2070&auto=format&fit=crop",
     tags: ["wildflowers", "natural"],
   },
   {
@@ -111,7 +121,8 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Coastal Elegance",
     slug: { current: "coastal-elegance" },
     category: "Summer Weddings",
-    mainImage: "/images/portfolio-11.jpg",
+    mainImage:
+      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop",
     tags: ["coastal", "beach"],
   },
   {
@@ -119,7 +130,8 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Hanging Gardens",
     slug: { current: "hanging-gardens" },
     category: "Installations",
-    mainImage: "/images/portfolio-12.jpg",
+    mainImage:
+      "https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=2072&auto=format&fit=crop",
     tags: ["hanging", "suspended"],
   },
 ];

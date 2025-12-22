@@ -22,7 +22,7 @@ export default function AboutPreview() {
               />
               <div className="relative w-full h-full overflow-hidden bg-[#FAF9F5]">
                 <Image
-                  src="/images/hannah-portrait.jpg"
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop"
                   alt="Hannah - Flora by Hannah"
                   fill
                   className="object-cover"

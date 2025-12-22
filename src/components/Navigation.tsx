@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
@@ -47,13 +48,18 @@ export default function Navigation() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="group">
-              <motion.h1
-                className="text-2xl lg:text-3xl font-serif text-[#2D2D2D] tracking-tight"
+              <motion.div
                 whileHover={{ scale: 1.02 }}
+                className="relative h-12 w-40 lg:h-14 lg:w-48"
               >
-                Flora
-                <span className="text-[#C9A9A6] italic"> by Hannah</span>
-              </motion.h1>
+                <Image
+                  src="/Flora logo.webp"
+                  alt="Flora by Hannah"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </motion.div>
             </Link>
 
             {/* Desktop Navigation */}

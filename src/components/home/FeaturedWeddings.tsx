@@ -22,7 +22,8 @@ const mockWeddings: Wedding[] = [
     title: "Summer Garden Romance",
     slug: { current: "summer-garden-romance" },
     venue: "Middleton Place",
-    coverImage: "/images/wedding-1.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
     category: "Summer Weddings",
   },
   {
@@ -30,7 +31,8 @@ const mockWeddings: Wedding[] = [
     title: "Elegant Southern Charm",
     slug: { current: "elegant-southern-charm" },
     venue: "Lowndes Grove",
-    coverImage: "/images/wedding-2.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2070&auto=format&fit=crop",
     category: "Installations",
   },
   {
@@ -38,7 +40,8 @@ const mockWeddings: Wedding[] = [
     title: "Blush & Bloom",
     slug: { current: "blush-and-bloom" },
     venue: "Boone Hall",
-    coverImage: "/images/wedding-3.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1561128290-006dc4827e9a?q=80&w=1974&auto=format&fit=crop",
     category: "Bouquets",
   },
   {
@@ -46,7 +49,8 @@ const mockWeddings: Wedding[] = [
     title: "Coastal Elegance",
     slug: { current: "coastal-elegance" },
     venue: "The Cedar Room",
-    coverImage: "/images/wedding-4.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=2080&auto=format&fit=crop",
     category: "Summer Weddings",
   },
   {
@@ -54,7 +58,8 @@ const mockWeddings: Wedding[] = [
     title: "Timeless Traditions",
     slug: { current: "timeless-traditions" },
     venue: "William Aiken House",
-    coverImage: "/images/wedding-5.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
     category: "Installations",
   },
   {
@@ -62,7 +67,8 @@ const mockWeddings: Wedding[] = [
     title: "Garden Party Dreams",
     slug: { current: "garden-party-dreams" },
     venue: "Magnolia Plantation",
-    coverImage: "/images/wedding-6.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1525258946800-98cfd641d0de?q=80&w=2074&auto=format&fit=crop",
     category: "Bouquets",
   },
 ];
