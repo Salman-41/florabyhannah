@@ -103,7 +103,9 @@ export default function HeroSection({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            Floral design that brings <span className="italic text-[#C9A9A6]">life and color</span> to your most special days
+            Floral design that brings{" "}
+            <span className="italic text-[#C9A9A6]">life and color</span> to
+            your most special days
           </motion.h1>
 
           <motion.p

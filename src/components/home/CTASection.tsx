@@ -156,7 +156,8 @@ export default function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Now Booking <span className="italic text-[#C9A9A6]">2025 Weddings</span>
+          Now Booking{" "}
+          <span className="italic text-[#C9A9A6]">2025 Weddings</span>
         </motion.h2>
 
         <motion.p
