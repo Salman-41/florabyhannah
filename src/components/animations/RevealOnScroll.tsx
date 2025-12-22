@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import { motion, useInView } from 'framer-motion';
-import { useRef, ReactNode } from 'react';
+import { motion, useInView } from "framer-motion";
+import { useRef, ReactNode } from "react";
 
 interface RevealOnScrollProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  direction?: 'up' | 'down' | 'left' | 'right' | 'none';
+  direction?: "up" | "down" | "left" | "right" | "none";
   duration?: number;
   once?: boolean;
 }
 
 export default function RevealOnScroll({
   children,
-  className = '',
+  className = "",
   delay = 0,
-  direction = 'up',
+  direction = "up",
   duration = 0.6,
   once = true,
 }: RevealOnScrollProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: '-100px' });
+  const isInView = useInView(ref, { once, margin: "-100px" });
 
   const directionOffset = {
     up: { y: 40, x: 0 },

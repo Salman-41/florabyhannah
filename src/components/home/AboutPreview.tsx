@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import { RevealOnScroll, MagneticWrapper } from '@/components/animations';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { RevealOnScroll, MagneticWrapper } from "@/components/animations";
 
 export default function AboutPreview() {
   return (
@@ -35,7 +35,7 @@ export default function AboutPreview() {
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.5, type: 'spring' }}
+                transition={{ delay: 0.5, type: "spring" }}
               />
             </div>
           </RevealOnScroll>
@@ -56,17 +56,19 @@ export default function AboutPreview() {
 
             <RevealOnScroll delay={0.2}>
               <p className="text-lg text-[#2D2D2D]/70 leading-relaxed mb-6">
-                Hi! My name is Hannah, and I&apos;m the owner and founder of Flora by Hannah. 
-                I fell in love with flowers growing up, and I started Flora as a way to 
-                hopefully share my love for these beautiful creations with as many people as possible.
+                Hi! My name is Hannah, and I&apos;m the owner and founder of
+                Flora by Hannah. I fell in love with flowers growing up, and I
+                started Flora as a way to hopefully share my love for these
+                beautiful creations with as many people as possible.
               </p>
             </RevealOnScroll>
 
             <RevealOnScroll delay={0.3}>
               <p className="text-lg text-[#2D2D2D]/70 leading-relaxed mb-8">
-                Flora Designs specializes in creating classic and timeless florals that bring 
-                weddings and events to life. I love to create floral moments that make your 
-                special day unforgettable and undeniably stunning.
+                Flora Designs specializes in creating classic and timeless
+                florals that bring weddings and events to life. I love to create
+                floral moments that make your special day unforgettable and
+                undeniably stunning.
               </p>
             </RevealOnScroll>
 
@@ -80,7 +82,7 @@ export default function AboutPreview() {
                   <motion.span
                     className="inline-block"
                     whileHover={{ x: 5 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     →
                   </motion.span>

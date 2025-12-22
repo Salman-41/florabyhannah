@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { useRef, ReactNode, MouseEvent } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useRef, ReactNode, MouseEvent } from "react";
 
 interface MagneticWrapperProps {
   children: ReactNode;
@@ -11,28 +11,28 @@ interface MagneticWrapperProps {
 
 export default function MagneticWrapper({
   children,
-  className = '',
+  className = "",
   strength = 0.3,
 }: MagneticWrapperProps) {
   const ref = useRef<HTMLDivElement>(null);
-  
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  
+
   const springConfig = { damping: 15, stiffness: 150 };
   const xSpring = useSpring(x, springConfig);
   const ySpring = useSpring(y, springConfig);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
-    
+
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
+
     const deltaX = (e.clientX - centerX) * strength;
     const deltaY = (e.clientY - centerY) * strength;
-    
+
     x.set(deltaX);
     y.set(deltaY);
   };

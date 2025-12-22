@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/about', label: 'About' },
-  { href: '/weddings-events', label: 'Weddings & Events' },
-  { href: '/contact', label: 'Contact' },
+  { href: "/", label: "Home" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/about", label: "About" },
+  { href: "/weddings-events", label: "Weddings & Events" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navigation() {
@@ -23,8 +23,8 @@ export default function Navigation() {
       setScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -36,12 +36,12 @@ export default function Navigation() {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#FDFCF0]/95 backdrop-blur-md shadow-sm'
-            : 'bg-transparent'
+            ? "bg-[#FDFCF0]/95 backdrop-blur-md shadow-sm"
+            : "bg-transparent"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <nav className="max-w-7xl mx-auto px-6 lg:px-12 py-4 lg:py-6">
           <div className="flex items-center justify-between">
@@ -67,16 +67,16 @@ export default function Navigation() {
                   <span
                     className={`text-sm tracking-[0.15em] uppercase transition-colors duration-300 ${
                       pathname === link.href
-                        ? 'text-[#4A5D4E]'
-                        : 'text-[#2D2D2D] hover:text-[#4A5D4E]'
+                        ? "text-[#4A5D4E]"
+                        : "text-[#2D2D2D] hover:text-[#4A5D4E]"
                     }`}
                   >
                     {link.label}
                   </span>
                   <motion.span
                     className="absolute -bottom-1 left-0 h-[1px] bg-[#C9A9A6]"
-                    initial={{ width: pathname === link.href ? '100%' : '0%' }}
-                    whileHover={{ width: '100%' }}
+                    initial={{ width: pathname === link.href ? "100%" : "0%" }}
+                    whileHover={{ width: "100%" }}
                     transition={{ duration: 0.3 }}
                   />
                 </Link>
@@ -140,8 +140,8 @@ export default function Navigation() {
                     href={link.href}
                     className={`text-3xl font-serif tracking-wide ${
                       pathname === link.href
-                        ? 'text-[#4A5D4E]'
-                        : 'text-[#2D2D2D] hover:text-[#C9A9A6]'
+                        ? "text-[#4A5D4E]"
+                        : "text-[#2D2D2D] hover:text-[#C9A9A6]"
                     } transition-colors duration-300`}
                   >
                     {link.label}

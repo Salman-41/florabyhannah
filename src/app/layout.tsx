@@ -19,11 +19,20 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Flora by Hannah | Wedding Florist in Charleston, SC",
-  description: "Custom wedding floral design in Charleston. Flora Designs specializes in creating classic and timeless florals that bring weddings and events to life.",
-  keywords: ["wedding florist", "Charleston florist", "wedding flowers", "floral design", "bridal bouquet", "wedding arrangements"],
+  description:
+    "Custom wedding floral design in Charleston. Flora Designs specializes in creating classic and timeless florals that bring weddings and events to life.",
+  keywords: [
+    "wedding florist",
+    "Charleston florist",
+    "wedding flowers",
+    "floral design",
+    "bridal bouquet",
+    "wedding arrangements",
+  ],
   openGraph: {
     title: "Flora by Hannah | Wedding Florist in Charleston, SC",
-    description: "Custom wedding floral design in Charleston. Creating classic and timeless florals for your special day.",
+    description:
+      "Custom wedding floral design in Charleston. Creating classic and timeless florals for your special day.",
     type: "website",
     locale: "en_US",
   },
@@ -41,9 +50,7 @@ export default function RootLayout({
       >
         <MagneticCursor />
         <Navigation />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRef } from 'react';
-import { RevealOnScroll } from '@/components/animations';
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useRef } from "react";
+import { RevealOnScroll } from "@/components/animations";
 
 interface Wedding {
   _id: string;
@@ -18,52 +18,52 @@ interface Wedding {
 // Mock data for development
 const mockWeddings: Wedding[] = [
   {
-    _id: '1',
-    title: 'Summer Garden Romance',
-    slug: { current: 'summer-garden-romance' },
-    venue: 'Middleton Place',
-    coverImage: '/images/wedding-1.jpg',
-    category: 'Summer Weddings',
+    _id: "1",
+    title: "Summer Garden Romance",
+    slug: { current: "summer-garden-romance" },
+    venue: "Middleton Place",
+    coverImage: "/images/wedding-1.jpg",
+    category: "Summer Weddings",
   },
   {
-    _id: '2',
-    title: 'Elegant Southern Charm',
-    slug: { current: 'elegant-southern-charm' },
-    venue: 'Lowndes Grove',
-    coverImage: '/images/wedding-2.jpg',
-    category: 'Installations',
+    _id: "2",
+    title: "Elegant Southern Charm",
+    slug: { current: "elegant-southern-charm" },
+    venue: "Lowndes Grove",
+    coverImage: "/images/wedding-2.jpg",
+    category: "Installations",
   },
   {
-    _id: '3',
-    title: 'Blush & Bloom',
-    slug: { current: 'blush-and-bloom' },
-    venue: 'Boone Hall',
-    coverImage: '/images/wedding-3.jpg',
-    category: 'Bouquets',
+    _id: "3",
+    title: "Blush & Bloom",
+    slug: { current: "blush-and-bloom" },
+    venue: "Boone Hall",
+    coverImage: "/images/wedding-3.jpg",
+    category: "Bouquets",
   },
   {
-    _id: '4',
-    title: 'Coastal Elegance',
-    slug: { current: 'coastal-elegance' },
-    venue: 'The Cedar Room',
-    coverImage: '/images/wedding-4.jpg',
-    category: 'Summer Weddings',
+    _id: "4",
+    title: "Coastal Elegance",
+    slug: { current: "coastal-elegance" },
+    venue: "The Cedar Room",
+    coverImage: "/images/wedding-4.jpg",
+    category: "Summer Weddings",
   },
   {
-    _id: '5',
-    title: 'Timeless Traditions',
-    slug: { current: 'timeless-traditions' },
-    venue: 'William Aiken House',
-    coverImage: '/images/wedding-5.jpg',
-    category: 'Installations',
+    _id: "5",
+    title: "Timeless Traditions",
+    slug: { current: "timeless-traditions" },
+    venue: "William Aiken House",
+    coverImage: "/images/wedding-5.jpg",
+    category: "Installations",
   },
   {
-    _id: '6',
-    title: 'Garden Party Dreams',
-    slug: { current: 'garden-party-dreams' },
-    venue: 'Magnolia Plantation',
-    coverImage: '/images/wedding-6.jpg',
-    category: 'Bouquets',
+    _id: "6",
+    title: "Garden Party Dreams",
+    slug: { current: "garden-party-dreams" },
+    venue: "Magnolia Plantation",
+    coverImage: "/images/wedding-6.jpg",
+    category: "Bouquets",
   },
 ];
 
@@ -71,7 +71,9 @@ interface FeaturedWeddingsProps {
   weddings?: Wedding[];
 }
 
-export default function FeaturedWeddings({ weddings = mockWeddings }: FeaturedWeddingsProps) {
+export default function FeaturedWeddings({
+  weddings = mockWeddings,
+}: FeaturedWeddingsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollXProgress } = useScroll({
     container: containerRef,
@@ -124,7 +126,10 @@ export default function FeaturedWeddings({ weddings = mockWeddings }: FeaturedWe
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
           >
-            <Link href={`/portfolio/${wedding.slug.current}`} className="group block h-full">
+            <Link
+              href={`/portfolio/${wedding.slug.current}`}
+              className="group block h-full"
+            >
               <div className="relative h-full overflow-hidden bg-[#FAF9F5]">
                 {wedding.coverImage ? (
                   <Image
@@ -137,10 +142,10 @@ export default function FeaturedWeddings({ weddings = mockWeddings }: FeaturedWe
                 ) : (
                   <div className="absolute inset-0 bg-gradient-to-br from-[#C9A9A6]/20 to-[#4A5D4E]/20" />
                 )}
-                
+
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
                   <span className="text-xs uppercase tracking-[0.2em] text-[#C9A9A6] mb-2 block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -157,7 +162,7 @@ export default function FeaturedWeddings({ weddings = mockWeddings }: FeaturedWe
             </Link>
           </motion.div>
         ))}
-        
+
         {/* View All Card */}
         <motion.div
           className="w-[60vw] md:w-[40vw] lg:w-[25vw] aspect-[3/4] flex-shrink-0 flex items-center justify-center"
@@ -187,7 +192,7 @@ export default function FeaturedWeddings({ weddings = mockWeddings }: FeaturedWe
         <div className="h-[2px] bg-[#B8AFA6]/30 max-w-xs">
           <motion.div
             className="h-full bg-[#4A5D4E]"
-            style={{ scaleX: scrollXProgress, transformOrigin: 'left' }}
+            style={{ scaleX: scrollXProgress, transformOrigin: "left" }}
           />
         </div>
       </div>

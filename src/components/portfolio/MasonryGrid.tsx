@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-import { RevealOnScroll } from '@/components/animations';
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { RevealOnScroll } from "@/components/animations";
 
 interface PortfolioItem {
   _id: string;
@@ -16,38 +16,138 @@ interface PortfolioItem {
 }
 
 // Mock data for development
-const categories = ['All', 'Summer Weddings', 'Bouquets', 'Installations', 'Centerpieces', 'Ceremony'];
+const categories = [
+  "All",
+  "Summer Weddings",
+  "Bouquets",
+  "Installations",
+  "Centerpieces",
+  "Ceremony",
+];
 
 const mockPortfolioItems: PortfolioItem[] = [
-  { _id: '1', title: 'Garden Romance', slug: { current: 'garden-romance' }, category: 'Summer Weddings', mainImage: '/images/portfolio-1.jpg', tags: ['outdoor', 'garden'] },
-  { _id: '2', title: 'Bridal Cascade', slug: { current: 'bridal-cascade' }, category: 'Bouquets', mainImage: '/images/portfolio-2.jpg', tags: ['bridal', 'cascade'] },
-  { _id: '3', title: 'Ceremony Arch', slug: { current: 'ceremony-arch' }, category: 'Installations', mainImage: '/images/portfolio-3.jpg', tags: ['arch', 'ceremony'] },
-  { _id: '4', title: 'Elegant Tables', slug: { current: 'elegant-tables' }, category: 'Centerpieces', mainImage: '/images/portfolio-4.jpg', tags: ['table', 'reception'] },
-  { _id: '5', title: 'Sunset Ceremony', slug: { current: 'sunset-ceremony' }, category: 'Ceremony', mainImage: '/images/portfolio-5.jpg', tags: ['sunset', 'outdoor'] },
-  { _id: '6', title: 'Blush Bouquet', slug: { current: 'blush-bouquet' }, category: 'Bouquets', mainImage: '/images/portfolio-6.jpg', tags: ['blush', 'roses'] },
-  { _id: '7', title: 'Garden Party', slug: { current: 'garden-party' }, category: 'Summer Weddings', mainImage: '/images/portfolio-7.jpg', tags: ['garden', 'summer'] },
-  { _id: '8', title: 'Floral Wall', slug: { current: 'floral-wall' }, category: 'Installations', mainImage: '/images/portfolio-8.jpg', tags: ['wall', 'backdrop'] },
-  { _id: '9', title: 'Classic White', slug: { current: 'classic-white' }, category: 'Centerpieces', mainImage: '/images/portfolio-9.jpg', tags: ['white', 'classic'] },
-  { _id: '10', title: 'Wildflower Dreams', slug: { current: 'wildflower-dreams' }, category: 'Bouquets', mainImage: '/images/portfolio-10.jpg', tags: ['wildflowers', 'natural'] },
-  { _id: '11', title: 'Coastal Elegance', slug: { current: 'coastal-elegance' }, category: 'Summer Weddings', mainImage: '/images/portfolio-11.jpg', tags: ['coastal', 'beach'] },
-  { _id: '12', title: 'Hanging Gardens', slug: { current: 'hanging-gardens' }, category: 'Installations', mainImage: '/images/portfolio-12.jpg', tags: ['hanging', 'suspended'] },
+  {
+    _id: "1",
+    title: "Garden Romance",
+    slug: { current: "garden-romance" },
+    category: "Summer Weddings",
+    mainImage: "/images/portfolio-1.jpg",
+    tags: ["outdoor", "garden"],
+  },
+  {
+    _id: "2",
+    title: "Bridal Cascade",
+    slug: { current: "bridal-cascade" },
+    category: "Bouquets",
+    mainImage: "/images/portfolio-2.jpg",
+    tags: ["bridal", "cascade"],
+  },
+  {
+    _id: "3",
+    title: "Ceremony Arch",
+    slug: { current: "ceremony-arch" },
+    category: "Installations",
+    mainImage: "/images/portfolio-3.jpg",
+    tags: ["arch", "ceremony"],
+  },
+  {
+    _id: "4",
+    title: "Elegant Tables",
+    slug: { current: "elegant-tables" },
+    category: "Centerpieces",
+    mainImage: "/images/portfolio-4.jpg",
+    tags: ["table", "reception"],
+  },
+  {
+    _id: "5",
+    title: "Sunset Ceremony",
+    slug: { current: "sunset-ceremony" },
+    category: "Ceremony",
+    mainImage: "/images/portfolio-5.jpg",
+    tags: ["sunset", "outdoor"],
+  },
+  {
+    _id: "6",
+    title: "Blush Bouquet",
+    slug: { current: "blush-bouquet" },
+    category: "Bouquets",
+    mainImage: "/images/portfolio-6.jpg",
+    tags: ["blush", "roses"],
+  },
+  {
+    _id: "7",
+    title: "Garden Party",
+    slug: { current: "garden-party" },
+    category: "Summer Weddings",
+    mainImage: "/images/portfolio-7.jpg",
+    tags: ["garden", "summer"],
+  },
+  {
+    _id: "8",
+    title: "Floral Wall",
+    slug: { current: "floral-wall" },
+    category: "Installations",
+    mainImage: "/images/portfolio-8.jpg",
+    tags: ["wall", "backdrop"],
+  },
+  {
+    _id: "9",
+    title: "Classic White",
+    slug: { current: "classic-white" },
+    category: "Centerpieces",
+    mainImage: "/images/portfolio-9.jpg",
+    tags: ["white", "classic"],
+  },
+  {
+    _id: "10",
+    title: "Wildflower Dreams",
+    slug: { current: "wildflower-dreams" },
+    category: "Bouquets",
+    mainImage: "/images/portfolio-10.jpg",
+    tags: ["wildflowers", "natural"],
+  },
+  {
+    _id: "11",
+    title: "Coastal Elegance",
+    slug: { current: "coastal-elegance" },
+    category: "Summer Weddings",
+    mainImage: "/images/portfolio-11.jpg",
+    tags: ["coastal", "beach"],
+  },
+  {
+    _id: "12",
+    title: "Hanging Gardens",
+    slug: { current: "hanging-gardens" },
+    category: "Installations",
+    mainImage: "/images/portfolio-12.jpg",
+    tags: ["hanging", "suspended"],
+  },
 ];
 
 interface MasonryGridProps {
   items?: PortfolioItem[];
 }
 
-export default function MasonryGrid({ items = mockPortfolioItems }: MasonryGridProps) {
-  const [activeCategory, setActiveCategory] = useState('All');
+export default function MasonryGrid({
+  items = mockPortfolioItems,
+}: MasonryGridProps) {
+  const [activeCategory, setActiveCategory] = useState("All");
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  const filteredItems = activeCategory === 'All'
-    ? items
-    : items.filter((item) => item.category === activeCategory);
+  const filteredItems =
+    activeCategory === "All"
+      ? items
+      : items.filter((item) => item.category === activeCategory);
 
   // Generate random heights for masonry effect
   const getRandomHeight = (id: string) => {
-    const heights = ['aspect-[3/4]', 'aspect-[4/5]', 'aspect-square', 'aspect-[3/4]', 'aspect-[4/3]'];
+    const heights = [
+      "aspect-[3/4]",
+      "aspect-[4/5]",
+      "aspect-square",
+      "aspect-[3/4]",
+      "aspect-[4/3]",
+    ];
     const index = parseInt(id) % heights.length;
     return heights[index];
   };
@@ -63,8 +163,8 @@ export default function MasonryGrid({ items = mockPortfolioItems }: MasonryGridP
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-3 text-sm uppercase tracking-[0.15em] transition-all duration-300 whitespace-nowrap ${
                 activeCategory === category
-                  ? 'bg-[#4A5D4E] text-[#FDFCF0]'
-                  : 'bg-transparent text-[#2D2D2D] border border-[#B8AFA6] hover:bg-[#FAF9F5]'
+                  ? "bg-[#4A5D4E] text-[#FDFCF0]"
+                  : "bg-transparent text-[#2D2D2D] border border-[#B8AFA6] hover:bg-[#FAF9F5]"
               }`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -94,7 +194,11 @@ export default function MasonryGrid({ items = mockPortfolioItems }: MasonryGridP
                 onMouseEnter={() => setHoveredId(item._id)}
                 onMouseLeave={() => setHoveredId(null)}
               >
-                <div className={`relative ${getRandomHeight(item._id)} bg-[#FAF9F5]`}>
+                <div
+                  className={`relative ${getRandomHeight(
+                    item._id
+                  )} bg-[#FAF9F5]`}
+                >
                   {item.mainImage ? (
                     <Image
                       src={item.mainImage}
@@ -122,10 +226,23 @@ export default function MasonryGrid({ items = mockPortfolioItems }: MasonryGridP
                     </h3>
                     <motion.div
                       className="w-10 h-10 rounded-full border border-[#FDFCF0] flex items-center justify-center"
-                      whileHover={{ scale: 1.1, backgroundColor: 'rgba(253, 252, 240, 0.2)' }}
+                      whileHover={{
+                        scale: 1.1,
+                        backgroundColor: "rgba(253, 252, 240, 0.2)",
+                      }}
                     >
-                      <svg className="w-4 h-4 text-[#FDFCF0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <svg
+                        className="w-4 h-4 text-[#FDFCF0]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
                       </svg>
                     </motion.div>
                   </motion.div>

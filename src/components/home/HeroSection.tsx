@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRef } from 'react';
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useRef } from "react";
 
 interface HeroSectionProps {
   title?: string;
@@ -23,7 +23,7 @@ export default function HeroSection({
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start start', 'end start'],
+    offset: ["start start", "end start"],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
@@ -33,10 +33,7 @@ export default function HeroSection({
   return (
     <section ref={ref} className="relative h-screen w-full overflow-hidden">
       {/* Background Image with Parallax */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={{ y, scale }}
-      >
+      <motion.div className="absolute inset-0 z-0" style={{ y, scale }}>
         <Image
           src={backgroundImage}
           alt="Flora by Hannah Hero"
@@ -120,9 +117,7 @@ export default function HeroSection({
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
         >
-          <motion.div
-            className="w-1 h-2 bg-[#FDFCF0]/50 rounded-full mt-2"
-          />
+          <motion.div className="w-1 h-2 bg-[#FDFCF0]/50 rounded-full mt-2" />
         </motion.div>
       </motion.div>
     </section>

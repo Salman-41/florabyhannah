@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
-import { useState, useEffect, useCallback } from 'react';
-import { RevealOnScroll } from '@/components/animations';
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useState, useEffect, useCallback } from "react";
+import { RevealOnScroll } from "@/components/animations";
 
 interface Testimonial {
   _id: string;
@@ -17,31 +17,35 @@ interface Testimonial {
 // Mock data for development
 const mockTestimonials: Testimonial[] = [
   {
-    _id: '1',
-    name: 'Cassie',
-    role: 'Bride',
-    quote: "Hannah's eye for colors and attention to detail shows in every arrangement. From the smallest personals, to the ceremony arch, we could not have been more pleased! She was a pleasure to work with.",
+    _id: "1",
+    name: "Cassie",
+    role: "Bride",
+    quote:
+      "Hannah's eye for colors and attention to detail shows in every arrangement. From the smallest personals, to the ceremony arch, we could not have been more pleased! She was a pleasure to work with.",
     rating: 5,
   },
   {
-    _id: '2',
-    name: 'Haley',
-    role: 'Bride',
-    quote: "Hannah made the bouquet of my dreams and went above and beyond to ensure my day was beautiful! Working with her was one of the easiest parts of planning my wedding. I recommend her to everyone!",
+    _id: "2",
+    name: "Haley",
+    role: "Bride",
+    quote:
+      "Hannah made the bouquet of my dreams and went above and beyond to ensure my day was beautiful! Working with her was one of the easiest parts of planning my wedding. I recommend her to everyone!",
     rating: 5,
   },
   {
-    _id: '3',
-    name: 'Kelly',
-    role: 'Bride',
-    quote: "Working with Hannah was one of the easiest parts of the wedding planning process - clear and constant communication, and I never had a doubt she would execute flawlessly!",
+    _id: "3",
+    name: "Kelly",
+    role: "Bride",
+    quote:
+      "Working with Hannah was one of the easiest parts of the wedding planning process - clear and constant communication, and I never had a doubt she would execute flawlessly!",
     rating: 5,
   },
   {
-    _id: '4',
-    name: 'Sarah',
-    role: 'Bride',
-    quote: "Hannah didn't hesitate with any of my ideas and met them with enthusiasm! The service she provides is more like a collaboration between friends and I truly enjoyed working with her.",
+    _id: "4",
+    name: "Sarah",
+    role: "Bride",
+    quote:
+      "Hannah didn't hesitate with any of my ideas and met them with enthusiasm! The service she provides is more like a collaboration between friends and I truly enjoyed working with her.",
     rating: 5,
   },
 ];
@@ -50,19 +54,24 @@ interface TestimonialSliderProps {
   testimonials?: Testimonial[];
 }
 
-export default function TestimonialSlider({ testimonials = mockTestimonials }: TestimonialSliderProps) {
+export default function TestimonialSlider({
+  testimonials = mockTestimonials,
+}: TestimonialSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  const paginate = useCallback((newDirection: number) => {
-    setDirection(newDirection);
-    setCurrentIndex((prev) => {
-      let nextIndex = prev + newDirection;
-      if (nextIndex < 0) nextIndex = testimonials.length - 1;
-      if (nextIndex >= testimonials.length) nextIndex = 0;
-      return nextIndex;
-    });
-  }, [testimonials.length]);
+  const paginate = useCallback(
+    (newDirection: number) => {
+      setDirection(newDirection);
+      setCurrentIndex((prev) => {
+        let nextIndex = prev + newDirection;
+        if (nextIndex < 0) nextIndex = testimonials.length - 1;
+        if (nextIndex >= testimonials.length) nextIndex = 0;
+        return nextIndex;
+      });
+    },
+    [testimonials.length]
+  );
 
   // Auto-advance
   useEffect(() => {
@@ -111,7 +120,7 @@ export default function TestimonialSlider({ testimonials = mockTestimonials }: T
               animate="center"
               exit="exit"
               transition={{
-                x: { type: 'spring', stiffness: 300, damping: 30 },
+                x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.3 },
               }}
               className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
@@ -181,8 +190,18 @@ export default function TestimonialSlider({ testimonials = mockTestimonials }: T
             className="w-12 h-12 rounded-full border border-[#B8AFA6] flex items-center justify-center text-[#4A5D4E] hover:bg-[#4A5D4E] hover:text-[#FDFCF0] hover:border-[#4A5D4E] transition-all duration-300"
             aria-label="Previous testimonial"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </button>
 
@@ -196,9 +215,7 @@ export default function TestimonialSlider({ testimonials = mockTestimonials }: T
                   setCurrentIndex(index);
                 }}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? 'bg-[#4A5D4E] w-6'
-                    : 'bg-[#B8AFA6]'
+                  index === currentIndex ? "bg-[#4A5D4E] w-6" : "bg-[#B8AFA6]"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -210,8 +227,18 @@ export default function TestimonialSlider({ testimonials = mockTestimonials }: T
             className="w-12 h-12 rounded-full border border-[#B8AFA6] flex items-center justify-center text-[#4A5D4E] hover:bg-[#4A5D4E] hover:text-[#FDFCF0] hover:border-[#4A5D4E] transition-all duration-300"
             aria-label="Next testimonial"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </button>
         </div>

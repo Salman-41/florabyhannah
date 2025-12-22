@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { RevealOnScroll } from '@/components/animations';
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { RevealOnScroll } from "@/components/animations";
 
 export default function CTASection() {
   return (
@@ -28,8 +28,9 @@ export default function CTASection() {
 
         <RevealOnScroll delay={0.2}>
           <p className="text-lg text-[#FDFCF0]/80 max-w-2xl mx-auto mb-10">
-            I&apos;d love to talk to you about how I can make your floral dreams come true for 
-            your special day. Let&apos;s create something beautiful together.
+            I&apos;d love to talk to you about how I can make your floral dreams
+            come true for your special day. Let&apos;s create something
+            beautiful together.
           </p>
         </RevealOnScroll>
 
