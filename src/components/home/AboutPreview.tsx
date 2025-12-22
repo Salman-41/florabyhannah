@@ -93,10 +93,8 @@ export default function AboutPreview() {
             </RevealOnScroll>
 
             <RevealOnScroll delay={0.1}>
-              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-serif text-[#2D2D2D] mb-8 leading-[1.1]">
-                Your Charleston
-                <br />
-                <span className="italic text-[#C9A9A6]">Wedding Florist</span>
+              <h2 className="text-5xl lg:text-6xl font-serif text-[#2D2D2D] mb-8 leading-[1.2]">
+                Your Charleston <span className="italic text-[#C9A9A6]">Wedding Florist</span>
               </h2>
             </RevealOnScroll>
 

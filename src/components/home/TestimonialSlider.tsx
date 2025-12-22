@@ -125,7 +125,7 @@ export default function TestimonialSlider({
             Testimonials
             <span className="w-12 h-px bg-[#4A5D4E]" />
           </span>
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-serif text-[#2D2D2D]">
+          <h2 className="text-5xl lg:text-6xl font-serif text-[#2D2D2D]">
             Kind <span className="italic text-[#C9A9A6]">Words</span>
           </h2>
         </motion.div>

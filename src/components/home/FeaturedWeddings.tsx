@@ -93,10 +93,8 @@ export default function FeaturedWeddings({
               <span className="w-12 h-px bg-[#C9A9A6]" />
               Featured Work
             </span>
-            <h2 className="text-4xl lg:text-6xl xl:text-7xl font-serif text-[#FDFCF0] leading-[1.1]">
-              Featured
-              <br />
-              <span className="italic text-[#C9A9A6]">Weddings</span>
+            <h2 className="text-5xl lg:text-6xl font-serif text-[#FDFCF0] leading-[1.2]">
+              Featured <span className="italic text-[#C9A9A6]">Weddings</span>
             </h2>
           </div>
           <Link

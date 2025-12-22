@@ -98,18 +98,12 @@ export default function HeroSection({
           </motion.span>
 
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-[#FDFCF0] max-w-5xl leading-[1.05] mb-8"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-[#FDFCF0] max-w-5xl leading-[1.15] mb-8"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            <span className="block">
-              {title.split(" ").slice(0, 3).join(" ")}
-            </span>
-            <span className="block italic text-[#C9A9A6]">
-              {title.split(" ").slice(3, 6).join(" ")}
-            </span>
-            <span className="block">{title.split(" ").slice(6).join(" ")}</span>
+            Floral design that brings <span className="italic text-[#C9A9A6]">life and color</span> to your most special days
           </motion.h1>
 
           <motion.p

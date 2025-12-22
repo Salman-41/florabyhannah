@@ -150,15 +150,13 @@ export default function CTASection() {
         </motion.span>
 
         <motion.h2
-          className="text-4xl lg:text-6xl xl:text-7xl font-serif text-[#FDFCF0] mb-6 leading-[1.1]"
+          className="text-5xl lg:text-6xl font-serif text-[#FDFCF0] mb-6 leading-[1.2]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Now Booking
-          <br />
-          <span className="italic text-[#C9A9A6]">2025 Weddings</span>
+          Now Booking <span className="italic text-[#C9A9A6]">2025 Weddings</span>
         </motion.h2>
 
         <motion.p
