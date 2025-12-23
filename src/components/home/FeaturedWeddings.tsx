@@ -78,12 +78,23 @@ export default function FeaturedWeddings({
         <FloralPattern
           variant="leaf"
           animate={false}
-          className="absolute -top-12 -right-12 w-44 h-44 sm:w-64 sm:h-64 text-muted-rose/10 rotate-12"
+          className="absolute -top-8 -right-8 w-48 h-48 sm:w-72 sm:h-72 text-muted-rose/14 rotate-12"
         />
         <FloralPattern
           variant="branch"
           animate={false}
-          className="absolute -bottom-16 -left-12 w-52 h-52 sm:w-72 sm:h-72 text-antique-white/8 -rotate-12"
+          className="absolute -bottom-10 -left-8 w-56 h-56 sm:w-80 sm:h-80 text-antique-white/12 -rotate-12"
+        />
+
+        <FloralPattern
+          variant="blossom"
+          animate={false}
+          className="absolute top-16 left-6 w-24 h-24 sm:w-32 sm:h-32 text-antique-white/10 rotate-6"
+        />
+        <FloralPattern
+          variant="petal"
+          animate={false}
+          className="absolute bottom-16 right-8 w-24 h-24 sm:w-32 sm:h-32 text-muted-rose/12 -rotate-6"
         />
       </div>
 

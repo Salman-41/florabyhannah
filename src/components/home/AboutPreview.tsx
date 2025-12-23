@@ -19,14 +19,19 @@ export default function AboutPreview() {
       {/* Section corner florals */}
       <div className="absolute inset-0 pointer-events-none">
         <FloralPattern
+          variant="branch"
+          animate={false}
+          className="absolute top-14 left-6 w-20 h-20 sm:w-28 sm:h-28 text-deep-sage/10 -rotate-6"
+        />
+        <FloralPattern
           variant="leaf"
           animate={false}
-          className="absolute -top-10 -right-10 w-36 h-36 sm:w-52 sm:h-52 text-deep-sage/10 rotate-12"
+          className="absolute -top-6 -right-6 w-40 h-40 sm:w-60 sm:h-60 text-deep-sage/14 rotate-12"
         />
         <FloralPattern
           variant="petal"
           animate={false}
-          className="absolute -bottom-12 -left-10 w-40 h-40 sm:w-60 sm:h-60 text-muted-rose/10 -rotate-12"
+          className="absolute -bottom-8 -left-6 w-44 h-44 sm:w-64 sm:h-64 text-muted-rose/14 -rotate-12"
         />
       </div>
 
@@ -59,12 +64,12 @@ export default function AboutPreview() {
                 <FloralPattern
                   variant="branch"
                   animate={false}
-                  className="absolute -top-8 -left-8 w-28 h-28 sm:w-36 sm:h-36 text-muted-rose/20 -rotate-12"
+                  className="absolute -top-6 -left-6 w-32 h-32 sm:w-40 sm:h-40 text-muted-rose/24 -rotate-12"
                 />
                 <FloralPattern
                   variant="blossom"
                   animate={false}
-                  className="absolute -bottom-10 -right-8 w-32 h-32 sm:w-40 sm:h-40 text-deep-sage/15 rotate-12"
+                  className="absolute -bottom-8 -right-6 w-36 h-36 sm:w-44 sm:h-44 text-deep-sage/18 rotate-12"
                 />
               </div>
             </div>

@@ -70,12 +70,24 @@ export default function HeroSection({
         <FloralPattern
           variant="branch"
           animate={false}
-          className="absolute -top-10 -left-10 w-40 h-40 sm:w-56 sm:h-56 text-muted-rose/15 rotate-12"
+          className="absolute -top-6 -left-6 w-44 h-44 sm:w-64 sm:h-64 text-muted-rose/20 rotate-12"
         />
         <FloralPattern
           variant="blossom"
           animate={false}
-          className="absolute -bottom-12 -right-10 w-44 h-44 sm:w-64 sm:h-64 text-antique-white/10 -rotate-12"
+          className="absolute -bottom-8 -right-6 w-48 h-48 sm:w-72 sm:h-72 text-antique-white/14 -rotate-12"
+        />
+
+        {/* Smaller opposite-corner accents (helps visibility on some screens) */}
+        <FloralPattern
+          variant="leaf"
+          animate={false}
+          className="absolute top-16 right-6 w-20 h-20 sm:w-28 sm:h-28 text-antique-white/10 rotate-6"
+        />
+        <FloralPattern
+          variant="petal"
+          animate={false}
+          className="absolute bottom-20 left-8 w-20 h-20 sm:w-28 sm:h-28 text-muted-rose/12 -rotate-6"
         />
       </div>
 
