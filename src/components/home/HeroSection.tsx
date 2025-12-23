@@ -23,7 +23,7 @@ export default function HeroSection({
       special days
     </>
   ),
-  subtitle = "Crafting unforgettable floral experiences for weddings and celebrations throughout the Lowcountry",
+  subtitle,
   ctaText = "View Portfolio",
   ctaLink = "/portfolio",
   // Brighter floral image (keeps the whole hero feeling light + visible)
@@ -142,14 +142,16 @@ export default function HeroSection({
             {title}
           </motion.h1>
 
-          <motion.p
-            className="text-sm sm:text-base md:text-lg text-[#FDFCF0]/70 max-w-xl mb-10 sm:mb-12 font-light leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            {subtitle}
-          </motion.p>
+          {subtitle && (
+            <motion.p
+              className="text-sm sm:text-base md:text-lg text-[#FDFCF0]/70 max-w-xl mb-10 sm:mb-12 font-light leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              {subtitle}
+            </motion.p>
+          )}
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"

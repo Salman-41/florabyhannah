@@ -5,14 +5,16 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function MagneticCursor() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isVisible] = useState(() => {
-    // Only show custom cursor on non-touch devices.
-    if (typeof window === "undefined") return false;
+  const [isVisible, setIsVisible] = useState(false); // start false to match SSR markup
+
+  // Decide visibility only on client after mount to avoid hydration mismatch.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
     const isTouchDevice =
       "ontouchstart" in window ||
       (typeof navigator !== "undefined" && navigator.maxTouchPoints > 0);
-    return !isTouchDevice;
-  });
+    setIsVisible(!isTouchDevice);
+  }, []);
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -69,14 +71,14 @@ export default function MagneticCursor() {
     <>
       {/* Main cursor */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9999] mix-blend-difference"
+        className="pointer-events-none fixed top-0 left-0 z-9999 mix-blend-difference"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
         }}
       >
         <motion.div
-          className="relative -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#4A5D4E]"
+          className="relative -translate-x-1/2 -translate-y-1/2 rounded-full border border-deep-sage"
           animate={{
             width: isExpanded ? 60 : 20,
             height: isExpanded ? 60 : 20,
@@ -95,7 +97,7 @@ export default function MagneticCursor() {
 
       {/* Cursor dot */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9999] w-1 h-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#4A5D4E]"
+        className="pointer-events-none fixed top-0 left-0 z-9999 w-1 h-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-deep-sage"
         style={{
           x: cursorX,
           y: cursorY,
