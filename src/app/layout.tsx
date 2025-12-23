@@ -4,6 +4,8 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import MagneticCursor from "@/components/MagneticCursor";
+import { TwentyFirstToolbar } from "@21st-extension/toolbar-next";
+import { ReactPlugin } from "@21st-extension/react";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -46,11 +48,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${cormorant.variable} ${inter.variable} antialiased bg-[#FDFCF0] text-[#2D2D2D]`}
+        className={`${cormorant.variable} ${inter.variable} antialiased bg-[#FDFCF0] text-[#2D2D2D] w-full overflow-x-clip`}
       >
+        <TwentyFirstToolbar config={{ plugins: [ReactPlugin] }} />
         <MagneticCursor />
         <Navigation />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen w-full">{children}</main>
         <Footer />
       </body>
     </html>

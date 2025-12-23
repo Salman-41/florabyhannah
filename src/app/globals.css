@@ -30,9 +30,15 @@
   --color-soft-black: #1A1A1A;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+/*
+  IMPORTANT:
+  Tailwind v4 uses CSS cascade layers.
+  Unlayered global resets can override utility classes (e.g. `mx-auto`, `px-6`).
+  Keep the reset minimal so Tailwind spacing utilities continue to work.
+*/
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -44,7 +50,18 @@ body {
   background: var(--antique-white);
   color: var(--charcoal);
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  /* Keep any 100vw/w-screen visual layers from nudging layout */
+  overflow-x: clip;
+  position: relative;
+  width: 100%;
+}
+
+/* Some browsers don't fully support overflow: clip */
+@supports not (overflow: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
 }
 
 /* Typography */
