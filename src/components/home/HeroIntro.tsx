@@ -93,7 +93,14 @@ export default function HeroIntro({
           <motion.div
             className="mt-6 h-px bg-[#4A5D4E]"
             initial={{ width: 0 }}
-            animate={{ width: phase >= 1 ? (viewportWidth != null && viewportWidth < 640 ? "220px" : "300px") : 0 }}
+            animate={{
+              width:
+                phase >= 1
+                  ? viewportWidth != null && viewportWidth < 640
+                    ? "220px"
+                    : "300px"
+                  : 0,
+            }}
             transition={{ duration: 1, delay: 0.5 }}
           />
         </motion.div>
@@ -179,8 +186,18 @@ export default function HeroIntro({
           animate={{
             opacity: phase >= 4 ? 1 : 0,
             // Use dvw/dvh to avoid the classic 100vw scrollbar overflow on desktop/mobile browsers.
-            width: phase >= 4 ? "100dvw" : (viewportWidth != null && viewportWidth < 640 ? "240px" : "280px"),
-            height: phase >= 4 ? "100dvh" : (viewportWidth != null && viewportWidth < 640 ? "300px" : "350px"),
+            width:
+              phase >= 4
+                ? "100dvw"
+                : viewportWidth != null && viewportWidth < 640
+                  ? "240px"
+                  : "280px",
+            height:
+              phase >= 4
+                ? "100dvh"
+                : viewportWidth != null && viewportWidth < 640
+                  ? "300px"
+                  : "350px",
             borderRadius: phase >= 4 ? "0px" : "8px",
           }}
           transition={{

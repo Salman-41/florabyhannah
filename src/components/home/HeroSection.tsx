@@ -18,8 +18,8 @@ export default function HeroSection({
   title = (
     <>
       Floral design that brings{" "}
-      <span className="italic text-[#C9A9A6]">life and color</span> to your
-      most special days
+      <span className="italic text-[#C9A9A6]">life and color</span> to your most
+      special days
     </>
   ),
   subtitle = "Crafting unforgettable floral experiences for weddings and celebrations throughout the Lowcountry",
