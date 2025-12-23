@@ -7,6 +7,7 @@ import {
   RevealOnScroll,
   MagneticWrapper,
   FloatingFlowers,
+  FloralPattern,
 } from "@/components/animations";
 
 export default function AboutPreview() {
@@ -14,6 +15,21 @@ export default function AboutPreview() {
     <section className="py-24 lg:py-32 bg-[#FDFCF0] relative overflow-hidden">
       {/* Floating Floral Patterns */}
       <FloatingFlowers density="medium" />
+
+      {/* Section corner florals */}
+      <div className="absolute inset-0 pointer-events-none">
+        <FloralPattern
+          variant="leaf"
+          animate={false}
+          className="absolute -top-10 -right-10 w-36 h-36 sm:w-52 sm:h-52 text-deep-sage/10 rotate-12"
+        />
+        <FloralPattern
+          variant="petal"
+          animate={false}
+          className="absolute -bottom-12 -left-10 w-40 h-40 sm:w-60 sm:h-60 text-muted-rose/10 -rotate-12"
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Image */}
@@ -37,6 +53,20 @@ export default function AboutPreview() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               />
+
+              {/* Floral frame accents (like the booking section vibe) */}
+              <div className="absolute inset-0 pointer-events-none">
+                <FloralPattern
+                  variant="branch"
+                  animate={false}
+                  className="absolute -top-8 -left-8 w-28 h-28 sm:w-36 sm:h-36 text-muted-rose/20 -rotate-12"
+                />
+                <FloralPattern
+                  variant="blossom"
+                  animate={false}
+                  className="absolute -bottom-10 -right-8 w-32 h-32 sm:w-40 sm:h-40 text-deep-sage/15 rotate-12"
+                />
+              </div>
             </div>
           </RevealOnScroll>
 

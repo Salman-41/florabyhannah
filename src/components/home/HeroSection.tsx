@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import { FloatingFlowers } from "@/components/animations";
+import { FloralPattern, FloatingFlowers } from "@/components/animations";
 
 interface HeroSectionProps {
   title?: React.ReactNode;
@@ -64,6 +64,20 @@ export default function HeroSection({
 
       {/* Floating Floral Patterns */}
       <FloatingFlowers density="light" />
+
+      {/* Section corner florals (subtle) */}
+      <div className="absolute inset-0 z-[1] pointer-events-none">
+        <FloralPattern
+          variant="branch"
+          animate={false}
+          className="absolute -top-10 -left-10 w-40 h-40 sm:w-56 sm:h-56 text-muted-rose/15 rotate-12"
+        />
+        <FloralPattern
+          variant="blossom"
+          animate={false}
+          className="absolute -bottom-12 -right-10 w-44 h-44 sm:w-64 sm:h-64 text-antique-white/10 -rotate-12"
+        />
+      </div>
 
       {/* Content */}
       {showContent && (

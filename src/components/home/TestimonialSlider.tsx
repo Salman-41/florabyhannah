@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
-import { FloatingFlowers } from "@/components/animations";
+import { FloralPattern, FloatingFlowers } from "@/components/animations";
 
 interface Testimonial {
   _id: string;
@@ -104,6 +104,19 @@ export default function TestimonialSlider({
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         <FloatingFlowers density="light" />
+
+        {/* Section corner florals */}
+        <FloralPattern
+          variant="petal"
+          animate={false}
+          className="absolute -top-10 -left-10 w-36 h-36 sm:w-52 sm:h-52 text-muted-rose/12 rotate-12"
+        />
+        <FloralPattern
+          variant="blossom"
+          animate={false}
+          className="absolute -bottom-12 -right-10 w-40 h-40 sm:w-60 sm:h-60 text-deep-sage/10 -rotate-12"
+        />
+
         {/* Large quote marks as background decoration */}
         <div className="absolute top-20 left-10 lg:left-32 text-[20rem] font-serif text-[#4A5D4E]/[0.03] leading-none select-none">
           &ldquo;

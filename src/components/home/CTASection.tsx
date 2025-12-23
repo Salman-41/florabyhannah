@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import { FloatingFlowers } from "@/components/animations";
+import { FloralPattern, FloatingFlowers } from "@/components/animations";
 
 export default function CTASection() {
   const sectionRef = useRef(null);
@@ -39,6 +39,19 @@ export default function CTASection() {
       {/* Decorative Elements */}
       <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
         <FloatingFlowers density="medium" />
+
+        {/* Section corner florals */}
+        <FloralPattern
+          variant="branch"
+          animate={false}
+          className="absolute -top-12 -left-12 w-44 h-44 sm:w-64 sm:h-64 text-muted-rose/12 rotate-12"
+        />
+        <FloralPattern
+          variant="leaf"
+          animate={false}
+          className="absolute -bottom-14 -right-14 w-52 h-52 sm:w-72 sm:h-72 text-antique-white/10 -rotate-12"
+        />
+
         {/* Animated floating circles */}
         <motion.div
           className="absolute top-20 left-[15%] w-64 h-64 rounded-full border border-[#FDFCF0]/10"

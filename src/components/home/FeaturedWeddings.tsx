@@ -3,7 +3,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { RevealOnScroll, FloatingFlowers } from "@/components/animations";
+import {
+  RevealOnScroll,
+  FloatingFlowers,
+  FloralPattern,
+} from "@/components/animations";
 
 interface Wedding {
   _id: string;
@@ -69,6 +73,18 @@ export default function FeaturedWeddings({
         <div className="absolute top-10 left-10 w-[600px] h-[600px] bg-[#4A5D4E]/8 rounded-full blur-[120px]" />
         <div className="absolute bottom-20 right-10 w-[700px] h-[700px] bg-[#C9A9A6]/8 rounded-full blur-[140px]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#FDFCF0]/3 rounded-full blur-[100px]" />
+
+        {/* Section corner florals */}
+        <FloralPattern
+          variant="leaf"
+          animate={false}
+          className="absolute -top-12 -right-12 w-44 h-44 sm:w-64 sm:h-64 text-muted-rose/10 rotate-12"
+        />
+        <FloralPattern
+          variant="branch"
+          animate={false}
+          className="absolute -bottom-16 -left-12 w-52 h-52 sm:w-72 sm:h-72 text-antique-white/8 -rotate-12"
+        />
       </div>
 
       {/* Header */}
