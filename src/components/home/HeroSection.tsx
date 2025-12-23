@@ -26,8 +26,8 @@ export default function HeroSection({
   subtitle = "Crafting unforgettable floral experiences for weddings and celebrations throughout the Lowcountry",
   ctaText = "View Portfolio",
   ctaLink = "/portfolio",
-  // Using a darker, more dramatic floral image
-  backgroundImage = "https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=2070&auto=format&fit=crop",
+  // Brighter floral image (keeps the whole hero feeling light + visible)
+  backgroundImage = "https://images.unsplash.com/photo-1470509037663-253afd7f0f51?q=80&w=2070&auto=format&fit=crop",
   showContent = true,
 }: HeroSectionProps) {
   const ref = useRef(null);
@@ -56,10 +56,10 @@ export default function HeroSection({
           sizes="100vw"
         />
         {/* Multi-layer gradient overlay for depth and text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/60 via-[#1A1A1A]/30 to-[#1A1A1A]/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/40 via-transparent to-[#1A1A1A]/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/45 via-[#1A1A1A]/20 to-[#1A1A1A]/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/25 via-transparent to-[#1A1A1A]/25" />
         {/* Subtle vignette effect */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(26,26,26,0.4)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(253,252,240,0.12)_0%,_rgba(26,26,26,0.32)_100%)]" />
       </motion.div>
 
       {/* Floating Floral Patterns */}
