@@ -5,7 +5,14 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function MagneticCursor() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible] = useState(() => {
+    // Only show custom cursor on non-touch devices.
+    if (typeof window === "undefined") return false;
+    const isTouchDevice =
+      "ontouchstart" in window ||
+      (typeof navigator !== "undefined" && navigator.maxTouchPoints > 0);
+    return !isTouchDevice;
+  });
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -23,12 +30,8 @@ export default function MagneticCursor() {
   );
 
   useEffect(() => {
-    // Only show custom cursor on desktop
-    const isTouchDevice =
-      "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    if (isTouchDevice) return;
+    if (!isVisible) return;
 
-    setIsVisible(true);
     window.addEventListener("mousemove", moveCursor);
 
     // Add hover detection for images and links
@@ -58,7 +61,7 @@ export default function MagneticCursor() {
       document.removeEventListener("mouseover", handleMouseOver);
       document.removeEventListener("mouseout", handleMouseOut);
     };
-  }, [moveCursor]);
+  }, [moveCursor, isVisible]);
 
   if (!isVisible) return null;
 

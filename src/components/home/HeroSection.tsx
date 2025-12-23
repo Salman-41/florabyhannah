@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRef } from "react";
 
 interface HeroSectionProps {
-  title?: string;
+  title?: React.ReactNode;
   subtitle?: string;
   ctaText?: string;
   ctaLink?: string;
@@ -15,7 +15,13 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({
-  title = "Floral design that brings life and color to your most special days",
+  title = (
+    <>
+      Floral design that brings{" "}
+      <span className="italic text-[#C9A9A6]">life and color</span> to your
+      most special days
+    </>
+  ),
   subtitle = "Crafting unforgettable floral experiences for weddings and celebrations throughout the Lowcountry",
   ctaText = "View Portfolio",
   ctaLink = "/portfolio",
@@ -36,7 +42,7 @@ export default function HeroSection({
   return (
     <section
       ref={ref}
-      className="relative h-screen w-full overflow-hidden bg-[#1a1a1a]"
+      className="relative w-full overflow-hidden bg-[#1a1a1a] min-h-[100svh]"
     >
       {/* Background Image with Parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ y, scale }}>
@@ -58,7 +64,7 @@ export default function HeroSection({
       {/* Content */}
       {showContent && (
         <motion.div
-          className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6"
+          className="relative z-10 min-h-[100svh] flex flex-col items-center justify-center text-center px-6 pt-24 sm:pt-28"
           style={{ opacity }}
         >
           {/* Decorative top element */}
@@ -98,18 +104,16 @@ export default function HeroSection({
           </motion.span>
 
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-[#FDFCF0] max-w-5xl leading-[1.15] mb-8"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-[#FDFCF0] max-w-5xl leading-[1.15] mb-8"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            Floral design that brings{" "}
-            <span className="italic text-[#C9A9A6]">life and color</span> to
-            your most special days
+            {title}
           </motion.h1>
 
           <motion.p
-            className="text-base md:text-lg text-[#FDFCF0]/70 max-w-xl mb-12 font-light leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-[#FDFCF0]/70 max-w-xl mb-10 sm:mb-12 font-light leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -118,14 +122,14 @@ export default function HeroSection({
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <Link href={ctaLink}>
               <motion.button
-                className="group relative px-12 py-4 bg-transparent text-[#FDFCF0] text-xs uppercase tracking-[0.25em] overflow-hidden border border-[#FDFCF0]/30"
+                className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-transparent text-[#FDFCF0] text-xs uppercase tracking-[0.25em] overflow-hidden border border-[#FDFCF0]/30"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -142,7 +146,7 @@ export default function HeroSection({
             </Link>
             <Link href="/contact">
               <motion.button
-                className="group relative px-12 py-4 bg-[#C9A9A6] text-[#1a1a1a] text-xs uppercase tracking-[0.25em] overflow-hidden"
+                className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-[#C9A9A6] text-[#1a1a1a] text-xs uppercase tracking-[0.25em] overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

@@ -25,7 +25,7 @@ export default function AboutPreview() {
 
               {/* Decorative border */}
               <motion.div
-                className="absolute inset-0 border-2 border-[#4A5D4E]/20 -m-4 pointer-events-none"
+                className="absolute inset-0 border-2 border-[#4A5D4E]/20 -m-2 sm:-m-4 pointer-events-none"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}

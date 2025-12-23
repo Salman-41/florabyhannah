@@ -28,10 +28,6 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
-
   return (
     <>
       <motion.header
@@ -144,6 +140,7 @@ export default function Navigation() {
                 >
                   <Link
                     href={link.href}
+                    onClick={() => setIsOpen(false)}
                     className={`text-3xl font-serif tracking-wide ${
                       pathname === link.href
                         ? "text-[#4A5D4E]"

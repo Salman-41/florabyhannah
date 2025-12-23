@@ -26,6 +26,24 @@ export default function HeroIntro({
   skipIntro = false,
 }: HeroIntroProps) {
   const [phase, setPhase] = useState(skipIntro ? 5 : 0);
+  const [viewportWidth, setViewportWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Keep this cheap: only track width (we only need it for responsive animation distances).
+    const update = () => setViewportWidth(window.innerWidth);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const sideX =
+    viewportWidth == null
+      ? 320
+      : viewportWidth < 640
+        ? 160
+        : viewportWidth < 1024
+          ? 240
+          : 320;
 
   useEffect(() => {
     if (skipIntro) return;
@@ -64,7 +82,7 @@ export default function HeroIntro({
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <motion.h1
-            className="text-6xl md:text-8xl lg:text-9xl font-serif text-[#FDFCF0] whitespace-nowrap"
+            className="px-6 text-center text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-serif text-[#FDFCF0]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: phase >= 1 ? 1 : 0, y: phase >= 1 ? 0 : 30 }}
             transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -75,7 +93,7 @@ export default function HeroIntro({
           <motion.div
             className="mt-6 h-px bg-[#4A5D4E]"
             initial={{ width: 0 }}
-            animate={{ width: phase >= 1 ? "300px" : 0 }}
+            animate={{ width: phase >= 1 ? (viewportWidth != null && viewportWidth < 640 ? "220px" : "300px") : 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           />
         </motion.div>
@@ -110,7 +128,7 @@ export default function HeroIntro({
           initial={{ opacity: 0, x: 0, scale: 0.5 }}
           animate={{
             opacity: phase >= 3 && phase < 4 ? 1 : 0,
-            x: phase >= 3 ? -320 : 0,
+            x: phase >= 3 ? -sideX : 0,
             y: phase >= 3 ? 100 : 0,
             scale: phase >= 3 ? 1 : 0.5,
           }}
@@ -133,7 +151,7 @@ export default function HeroIntro({
           initial={{ opacity: 0, x: 0, scale: 0.5 }}
           animate={{
             opacity: phase >= 3 && phase < 4 ? 1 : 0,
-            x: phase >= 3 ? 320 : 0,
+            x: phase >= 3 ? sideX : 0,
             y: phase >= 3 ? 100 : 0,
             scale: phase >= 3 ? 1 : 0.5,
           }}
@@ -160,8 +178,9 @@ export default function HeroIntro({
           initial={{ opacity: 0 }}
           animate={{
             opacity: phase >= 4 ? 1 : 0,
-            width: phase >= 4 ? "100vw" : "280px",
-            height: phase >= 4 ? "100vh" : "350px",
+            // Use dvw/dvh to avoid the classic 100vw scrollbar overflow on desktop/mobile browsers.
+            width: phase >= 4 ? "100dvw" : (viewportWidth != null && viewportWidth < 640 ? "240px" : "280px"),
+            height: phase >= 4 ? "100dvh" : (viewportWidth != null && viewportWidth < 640 ? "300px" : "350px"),
             borderRadius: phase >= 4 ? "0px" : "8px",
           }}
           transition={{

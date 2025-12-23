@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { RevealOnScroll, Parallax } from "@/components/animations";
+import { RevealOnScroll } from "@/components/animations";
 
 export const metadata: Metadata = {
   title: "About | Flora by Hannah",
@@ -25,7 +25,7 @@ export default function AboutPage() {
               </RevealOnScroll>
 
               <RevealOnScroll delay={0.1}>
-                <h1 className="text-5xl lg:text-6xl xl:text-7xl font-serif text-[#2D2D2D] mb-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif text-[#2D2D2D] mb-6">
                   Hi! I&apos;m Hannah
                 </h1>
               </RevealOnScroll>
@@ -226,7 +226,7 @@ export default function AboutPage() {
           <RevealOnScroll delay={0.2}>
             <Link
               href="/contact"
-              className="inline-block px-12 py-5 bg-[#4A5D4E] text-[#FDFCF0] text-sm uppercase tracking-[0.2em] hover:bg-[#C9A9A6] transition-colors duration-500"
+              className="inline-block w-full sm:w-auto px-8 sm:px-12 py-5 bg-[#4A5D4E] text-[#FDFCF0] text-sm uppercase tracking-[0.2em] hover:bg-[#C9A9A6] transition-colors duration-500"
             >
               Contact Me
             </Link>

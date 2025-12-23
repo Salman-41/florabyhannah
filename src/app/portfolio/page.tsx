@@ -21,7 +21,7 @@ export default function PortfolioPage() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.1}>
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-serif text-[#2D2D2D] mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif text-[#2D2D2D] mb-6">
               Portfolio
             </h1>
           </RevealOnScroll>

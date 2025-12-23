@@ -81,7 +81,7 @@ export default function WeddingsEventsPage() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.1}>
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-serif text-[#FDFCF0] mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif text-[#FDFCF0] mb-6">
               Weddings & Events
             </h1>
           </RevealOnScroll>
@@ -260,7 +260,7 @@ export default function WeddingsEventsPage() {
               <RevealOnScroll delay={0.3}>
                 <Link
                   href="/contact"
-                  className="inline-block px-10 py-4 bg-[#4A5D4E] text-[#FDFCF0] text-sm uppercase tracking-[0.2em] hover:bg-[#C9A9A6] transition-colors duration-500"
+                  className="inline-block w-full sm:w-auto px-8 sm:px-10 py-4 bg-[#4A5D4E] text-[#FDFCF0] text-sm uppercase tracking-[0.2em] hover:bg-[#C9A9A6] transition-colors duration-500"
                 >
                   Inquire Here
                 </Link>
@@ -290,7 +290,7 @@ export default function WeddingsEventsPage() {
           <RevealOnScroll delay={0.2}>
             <Link
               href="/contact"
-              className="inline-block px-12 py-5 bg-[#FDFCF0] text-[#4A5D4E] text-sm uppercase tracking-[0.2em] hover:bg-[#C9A9A6] hover:text-[#FDFCF0] transition-colors duration-500"
+              className="inline-block w-full sm:w-auto px-8 sm:px-12 py-5 bg-[#FDFCF0] text-[#4A5D4E] text-sm uppercase tracking-[0.2em] hover:bg-[#C9A9A6] hover:text-[#FDFCF0] transition-colors duration-500"
             >
               Schedule a Consultation
             </Link>

@@ -1,9 +1,8 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
 import { RevealOnScroll } from "@/components/animations";
 
 interface Wedding {
@@ -62,20 +61,8 @@ interface FeaturedWeddingsProps {
 export default function FeaturedWeddings({
   weddings = mockWeddings,
 }: FeaturedWeddingsProps) {
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const headerY = useTransform(scrollYProgress, [0, 0.5], [100, 0]);
-  const headerOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
-
   return (
-    <section
-      ref={sectionRef}
-      className="py-32 lg:py-40 bg-[#1a1a1a] overflow-hidden relative"
-    >
+    <section className="py-32 lg:py-40 bg-[#1a1a1a] overflow-hidden relative">
       {/* Enhanced Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-10 left-10 w-[600px] h-[600px] bg-[#4A5D4E]/8 rounded-full blur-[120px]" />

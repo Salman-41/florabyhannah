@@ -104,10 +104,10 @@ export default function TestimonialSlider({
       <div className="absolute inset-0 pointer-events-none">
         {/* Large quote marks as background decoration */}
         <div className="absolute top-20 left-10 lg:left-32 text-[20rem] font-serif text-[#4A5D4E]/[0.03] leading-none select-none">
-          "
+          &ldquo;
         </div>
         <div className="absolute bottom-20 right-10 lg:right-32 text-[20rem] font-serif text-[#4A5D4E]/[0.03] leading-none select-none rotate-180">
-          "
+          &rdquo;
         </div>
       </div>
 
