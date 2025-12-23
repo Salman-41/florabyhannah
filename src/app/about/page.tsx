@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { RevealOnScroll } from "@/components/animations";
+import { RevealOnScroll, FloatingFlowers } from "@/components/animations";
 
 export const metadata: Metadata = {
   title: "About | Flora by Hannah",
@@ -13,7 +13,8 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#FDFCF0]">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden relative">
+        <FloatingFlowers density="medium" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Content */}
@@ -172,7 +173,8 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 lg:py-28 bg-[#4A5D4E]">
+      <section className="py-20 lg:py-28 bg-[#4A5D4E] relative overflow-hidden">
+        <FloatingFlowers density="light" />
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <RevealOnScroll className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-serif text-[#FDFCF0] mb-4">

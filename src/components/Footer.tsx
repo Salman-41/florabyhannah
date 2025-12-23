@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { FloatingFlowers } from "@/components/animations";
 
 const footerLinks = [
   { href: "/portfolio", label: "Portfolio" },
@@ -41,7 +42,8 @@ function PinterestIcon() {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#FAF9F5] border-t border-[#B8AFA6]/30">
+    <footer className="bg-[#FAF9F5] border-t border-[#B8AFA6]/30 relative overflow-hidden">
+      <FloatingFlowers density="light" />
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}

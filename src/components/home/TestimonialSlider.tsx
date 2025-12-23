@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
+import { FloatingFlowers } from "@/components/animations";
 
 interface Testimonial {
   _id: string;
@@ -102,6 +103,7 @@ export default function TestimonialSlider({
     <section className="py-32 lg:py-40 bg-[#FDFCF0] relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
+        <FloatingFlowers density="light" />
         {/* Large quote marks as background decoration */}
         <div className="absolute top-20 left-10 lg:left-32 text-[20rem] font-serif text-[#4A5D4E]/[0.03] leading-none select-none">
           &ldquo;

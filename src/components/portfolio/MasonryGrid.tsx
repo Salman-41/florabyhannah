@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FloatingFlowers } from "@/components/animations";
 
 interface PortfolioItem {
   _id: string;
@@ -164,7 +165,8 @@ export default function MasonryGrid({
   };
 
   return (
-    <section className="py-8">
+    <section className="py-8 relative overflow-hidden">
+      <FloatingFlowers density="light" />
       {/* Filter Buttons */}
       <div className="mb-12 overflow-x-auto pb-4">
         <div className="flex gap-3 min-w-max">

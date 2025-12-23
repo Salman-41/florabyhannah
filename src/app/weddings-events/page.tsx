@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { RevealOnScroll } from "@/components/animations";
+import { RevealOnScroll, FloatingFlowers } from "@/components/animations";
 import { ProcessTimeline } from "@/components/weddings";
 
 export const metadata: Metadata = {
@@ -62,6 +62,7 @@ export default function WeddingsEventsPage() {
     <div className="min-h-screen bg-[#FDFCF0]">
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        <FloatingFlowers density="light" />
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop"
@@ -131,7 +132,8 @@ export default function WeddingsEventsPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 lg:py-28 bg-[#FAF9F5]">
+      <section className="py-20 lg:py-28 bg-[#FAF9F5] relative overflow-hidden">
+        <FloatingFlowers density="medium" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <RevealOnScroll className="text-center mb-16">
             <span className="text-sm uppercase tracking-[0.3em] text-[#4A5D4E] mb-4 block">
@@ -271,7 +273,8 @@ export default function WeddingsEventsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-28 bg-[#4A5D4E]">
+      <section className="py-20 lg:py-28 bg-[#4A5D4E] relative overflow-hidden">
+        <FloatingFlowers density="light" />
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <RevealOnScroll>
             <h2 className="text-4xl lg:text-5xl font-serif text-[#FDFCF0] mb-6">

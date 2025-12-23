@@ -3,11 +3,17 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { RevealOnScroll, MagneticWrapper } from "@/components/animations";
+import {
+  RevealOnScroll,
+  MagneticWrapper,
+  FloatingFlowers,
+} from "@/components/animations";
 
 export default function AboutPreview() {
   return (
-    <section className="py-24 lg:py-32 bg-[#FDFCF0]">
+    <section className="py-24 lg:py-32 bg-[#FDFCF0] relative overflow-hidden">
+      {/* Floating Floral Patterns */}
+      <FloatingFlowers density="medium" />
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Image */}

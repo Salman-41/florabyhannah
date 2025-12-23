@@ -7,3 +7,4 @@ export {
   staggerItem,
 } from "./StaggerContainer";
 export { default as MagneticWrapper } from "./MagneticWrapper";
+export { default as FloralPattern, FloatingFlowers } from "./FloralPattern";

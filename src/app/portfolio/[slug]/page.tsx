@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { RevealOnScroll } from "@/components/animations";
+import { RevealOnScroll, FloatingFlowers } from "@/components/animations";
 
 // Mock data for development
 const mockPortfolioItems = [
@@ -61,7 +61,8 @@ export default async function PortfolioDetailPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-[#FDFCF0]">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-20">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
+        <FloatingFlowers density="light" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <RevealOnScroll>
             <Link
@@ -151,7 +152,8 @@ export default async function PortfolioDetailPage({ params }: Props) {
       )}
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-28 bg-[#4A5D4E]">
+      <section className="py-20 lg:py-28 bg-[#4A5D4E] relative overflow-hidden">
+        <FloatingFlowers density="medium" />
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <RevealOnScroll>
             <h2 className="text-4xl lg:text-5xl font-serif text-[#FDFCF0] mb-6">

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { RevealOnScroll } from "@/components/animations";
+import { RevealOnScroll, FloatingFlowers } from "@/components/animations";
 import { ContactForm } from "@/components/contact";
 
 export const metadata: Metadata = {
@@ -12,7 +12,8 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#FDFCF0]">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-20">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
+        <FloatingFlowers density="light" />
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <RevealOnScroll>
             <span className="text-sm uppercase tracking-[0.3em] text-[#4A5D4E] mb-4 block">

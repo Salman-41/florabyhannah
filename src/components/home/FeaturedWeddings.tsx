@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { RevealOnScroll } from "@/components/animations";
+import { RevealOnScroll, FloatingFlowers } from "@/components/animations";
 
 interface Wedding {
   _id: string;
@@ -65,6 +65,7 @@ export default function FeaturedWeddings({
     <section className="py-32 lg:py-40 bg-[#1a1a1a] overflow-hidden relative">
       {/* Enhanced Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <FloatingFlowers density="medium" />
         <div className="absolute top-10 left-10 w-[600px] h-[600px] bg-[#4A5D4E]/8 rounded-full blur-[120px]" />
         <div className="absolute bottom-20 right-10 w-[700px] h-[700px] bg-[#C9A9A6]/8 rounded-full blur-[140px]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#FDFCF0]/3 rounded-full blur-[100px]" />

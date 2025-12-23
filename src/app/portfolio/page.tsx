@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { MasonryGrid } from "@/components/portfolio";
-import { RevealOnScroll } from "@/components/animations";
+import { RevealOnScroll, FloatingFlowers } from "@/components/animations";
 
 export const metadata: Metadata = {
   title: "Portfolio | Flora by Hannah",
@@ -12,7 +12,8 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-[#FDFCF0]">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-20">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
+        <FloatingFlowers density="medium" />
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <RevealOnScroll>
             <span className="text-sm uppercase tracking-[0.3em] text-[#4A5D4E] mb-4 block">

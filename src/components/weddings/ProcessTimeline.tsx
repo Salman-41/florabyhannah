@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FloatingFlowers } from "@/components/animations";
 import { RevealOnScroll } from "@/components/animations";
 
 interface ProcessStep {
@@ -43,7 +44,8 @@ const processSteps: ProcessStep[] = [
 
 export default function ProcessTimeline() {
   return (
-    <section className="py-20 lg:py-28 bg-[#FAF9F5]">
+    <section className="py-20 lg:py-28 bg-[#FDFCF0] relative overflow-hidden">
+      <FloatingFlowers density="medium" />
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <RevealOnScroll className="text-center mb-16">
           <span className="text-sm uppercase tracking-[0.3em] text-[#4A5D4E] mb-4 block">

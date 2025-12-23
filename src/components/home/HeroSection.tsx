@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import { FloatingFlowers } from "@/components/animations";
 
 interface HeroSectionProps {
   title?: React.ReactNode;
@@ -60,6 +61,9 @@ export default function HeroSection({
         {/* Subtle vignette effect */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(26,26,26,0.4)_100%)]" />
       </motion.div>
+
+      {/* Floating Floral Patterns */}
+      <FloatingFlowers density="light" />
 
       {/* Content */}
       {showContent && (
