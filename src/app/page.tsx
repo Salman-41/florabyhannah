@@ -15,7 +15,7 @@ export default function Home() {
 
   // Single source of truth: HeroIntro center image + HeroSection background match.
   const HERO_IMAGE =
-    "https://images.unsplash.com/photo-1470509037663-253afd7f0f51?q=80&w=2070&auto=format&fit=crop";
+    "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=2070&auto=format&fit=crop";
 
   return (
     <>

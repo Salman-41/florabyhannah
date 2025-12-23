@@ -94,7 +94,7 @@ export default function HeroSection({
       {/* Content */}
       {showContent && (
         <motion.div
-          className="relative z-10 min-h-[100svh] flex flex-col items-center justify-center text-center px-6 pt-24 sm:pt-28"
+          className="relative z-10 min-h-[100svh] flex flex-col items-center justify-center text-center px-6 pt-24 sm:pt-28 pb-16 sm:pb-20"
           style={{ opacity }}
         >
           {/* Decorative top element */}
@@ -194,23 +194,6 @@ export default function HeroSection({
           </motion.div>
         </motion.div>
       )}
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-      >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-[#FDFCF0]/40">
-          Scroll
-        </span>
-        <motion.div
-          className="w-px h-12 bg-gradient-to-b from-[#FDFCF0]/40 to-transparent"
-          animate={{ scaleY: [1, 0.5, 1] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </motion.div>
 
       {/* Side decorative elements */}
       <div className="absolute left-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4 z-10">

@@ -31,7 +31,7 @@ export default function Navigation() {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-2 sm:px-4 ${
           scrolled
             ? "bg-[#FDFCF0]/95 backdrop-blur-md shadow-sm"
             : "bg-transparent"
@@ -40,7 +40,7 @@ export default function Navigation() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <nav className="max-w-7xl mx-auto px-6 lg:px-12 py-4 lg:py-6">
+        <nav className="max-w-7xl mx-auto px-4 lg:px-12 py-4 lg:py-6">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="group">
@@ -69,8 +69,12 @@ export default function Navigation() {
                   <span
                     className={`text-sm tracking-[0.15em] uppercase transition-colors duration-300 ${
                       pathname === link.href
-                        ? "text-[#4A5D4E]"
-                        : "text-[#2D2D2D] hover:text-[#4A5D4E]"
+                        ? scrolled
+                          ? "text-[#4A5D4E]"
+                          : "text-[#FDFCF0]"
+                        : scrolled
+                          ? "text-[#2D2D2D] hover:text-[#4A5D4E]"
+                          : "text-[#FDFCF0] hover:text-[#C9A9A6]"
                     }`}
                   >
                     {link.label}
@@ -92,7 +96,7 @@ export default function Navigation() {
               aria-label="Toggle menu"
             >
               <motion.span
-                className="w-6 h-[1px] bg-[#2D2D2D] absolute"
+                className={`w-6 h-[1px] absolute ${scrolled ? "bg-[#2D2D2D]" : "bg-[#FDFCF0]"}`}
                 animate={{
                   rotate: isOpen ? 45 : 0,
                   y: isOpen ? 0 : -6,
@@ -100,14 +104,14 @@ export default function Navigation() {
                 transition={{ duration: 0.3 }}
               />
               <motion.span
-                className="w-6 h-[1px] bg-[#2D2D2D] absolute"
+                className={`w-6 h-[1px] absolute ${scrolled ? "bg-[#2D2D2D]" : "bg-[#FDFCF0]"}`}
                 animate={{
                   opacity: isOpen ? 0 : 1,
                 }}
                 transition={{ duration: 0.3 }}
               />
               <motion.span
-                className="w-6 h-[1px] bg-[#2D2D2D] absolute"
+                className={`w-6 h-[1px] absolute ${scrolled ? "bg-[#2D2D2D]" : "bg-[#FDFCF0]"}`}
                 animate={{
                   rotate: isOpen ? -45 : 0,
                   y: isOpen ? 0 : 6,
