@@ -11,20 +11,23 @@ import { FloralPattern, FloatingFlowers } from "@/components/animations";
 // Phase 3: Two more images appear on sides of text
 // Phase 4: Center image expands from middle to full screen
 
-const floralImages = [
-  "https://images.unsplash.com/photo-1487530811176-3780de880c2d?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?q=80&w=800&auto=format&fit=crop",
-];
+const floralImages = {
+  left: "https://images.unsplash.com/photo-1487530811176-3780de880c2d?q=80&w=800&auto=format&fit=crop",
+  right:
+    "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?q=80&w=800&auto=format&fit=crop",
+};
 
 interface HeroIntroProps {
   onComplete?: () => void;
   skipIntro?: boolean;
+  /** Must match the HeroSection background image. */
+  heroImage?: string;
 }
 
 export default function HeroIntro({
   onComplete,
   skipIntro = false,
+  heroImage = "https://images.unsplash.com/photo-1470509037663-253afd7f0f51?q=80&w=2070&auto=format&fit=crop",
 }: HeroIntroProps) {
   const [phase, setPhase] = useState(skipIntro ? 5 : 0);
   const [viewportWidth, setViewportWidth] = useState<number | null>(null);
@@ -36,15 +39,6 @@ export default function HeroIntro({
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
-
-  const sideX =
-    viewportWidth == null
-      ? 320
-      : viewportWidth < 640
-        ? 160
-        : viewportWidth < 1024
-          ? 240
-          : 320;
 
   useEffect(() => {
     if (skipIntro) return;
@@ -69,24 +63,17 @@ export default function HeroIntro({
     <AnimatePresence>
       <LayoutGroup>
         <motion.div
-          className="fixed inset-0 z-[100] overflow-hidden flex items-center justify-center bg-antique-white"
+          className="fixed inset-0 z-100 overflow-hidden flex items-center justify-center bg-antique-white"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Floral-rich background (not flat black) */}
+          {/* Background: no images — only premium gradients + florals */}
           <div className="absolute inset-0">
-            <Image
-              src={floralImages[1]}
-              alt="Floral background"
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-            {/* Light + romantic overlays for readability */}
-            <div className="absolute inset-0 bg-linear-to-b from-antique-white/45 via-antique-white/25 to-soft-black/35" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(253,252,240,0.35)_0%,_rgba(26,26,26,0.25)_100%)]" />
+            <div className="absolute inset-0 bg-linear-to-br from-antique-white via-soft-cream to-[#EFE7DE]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,169,166,0.22)_0%,rgba(253,252,240,0.0)_55%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(74,93,78,0.16)_0%,rgba(253,252,240,0.0)_55%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(26,26,26,0.06)_0%,rgba(26,26,26,0.18)_100%)]" />
           </div>
 
           {/* Extra florals across the whole intro */}
@@ -95,21 +82,26 @@ export default function HeroIntro({
             <FloralPattern
               variant="branch"
               animate
-              className="absolute -top-16 -left-16 w-72 h-72 sm:w-[28rem] sm:h-[28rem] text-muted-rose/18 rotate-12"
+              className="absolute -top-16 -left-16 w-72 h-72 sm:w-md sm:h-112 text-muted-rose/18 rotate-12"
             />
             <FloralPattern
               variant="leaf"
               animate
-              className="absolute -bottom-20 -right-16 w-80 h-80 sm:w-[32rem] sm:h-[32rem] text-deep-sage/14 -rotate-12"
+              className="absolute -bottom-20 -right-16 w-80 h-80 sm:w-lg sm:h-128 text-deep-sage/14 -rotate-12"
             />
             <FloralPattern
               variant="blossom"
               animate={false}
               className="absolute top-24 right-12 w-28 h-28 sm:w-36 sm:h-36 text-antique-white/14 rotate-6"
             />
+            <FloralPattern
+              variant="petal"
+              animate={false}
+              className="absolute bottom-24 left-10 w-28 h-28 sm:w-36 sm:h-36 text-muted-rose/12 -rotate-6"
+            />
           </div>
 
-          {/* Phase 1-3: Inline headline with images pushing the text */}
+          {/* Phase 1-3: Inline headline with images inside the text (pushes it smoothly) */}
           <motion.div
             className="absolute inset-0 flex flex-col items-center justify-center"
             animate={{
@@ -124,106 +116,97 @@ export default function HeroIntro({
               animate={{ opacity: phase >= 1 ? 1 : 0, y: phase >= 1 ? 0 : 30 }}
               transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
-              <div className="inline-flex items-center justify-center gap-3 sm:gap-4 md:gap-6">
-                {/* Left image (phase 3) */}
-                <motion.div
-                  className="relative overflow-hidden rounded-lg ring-1 ring-antique-white/35 shadow-2xl"
-                  style={{
-                    width:
-                      viewportWidth != null && viewportWidth < 640 ? 44 : 72,
-                    height:
-                      viewportWidth != null && viewportWidth < 640 ? 56 : 92,
-                  }}
-                  initial={{ opacity: 0, scale: 0.9, x: 0 }}
-                  animate={{
-                    opacity: phase >= 3 ? 1 : 0,
-                    scale: phase >= 3 ? 1 : 0.9,
-                    x: phase >= 3 ? -16 : 0,
-                  }}
-                  transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-                >
-                  <Image
-                    src={floralImages[0]}
-                    alt="Floral arrangement"
-                    fill
-                    className="object-cover"
-                    sizes="120px"
-                  />
-                </motion.div>
+              <motion.h1
+                className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-serif text-soft-black"
+                layout
+                transition={{
+                  layout: { duration: 0.75, ease: [0.25, 0.46, 0.45, 0.94] },
+                }}
+              >
+                <span className="inline-flex items-center justify-center gap-3 sm:gap-4 md:gap-6">
+                  <motion.span layout>Flora</motion.span>
 
-                {/* Text + center image inserted between words (phase 2+) */}
-                <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-serif text-soft-black">
-                  <span className="inline-flex items-center gap-3 sm:gap-4 md:gap-6">
-                    <span>Flora</span>
+                  {/* Images appear inline and push the text apart naturally */}
+                  <AnimatePresence initial={false}>
+                    {phase >= 2 && (
+                      <motion.div
+                        key="intro-left"
+                        layout
+                        className="relative overflow-hidden rounded-lg ring-1 ring-antique-white/35 shadow-2xl w-[clamp(44px,6vw,84px)] h-[clamp(56px,7.5vw,104px)]"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{
+                          duration: 0.6,
+                          ease: [0.25, 0.46, 0.45, 0.94],
+                        }}
+                      >
+                        <Image
+                          src={floralImages.left}
+                          alt="Floral arrangement"
+                          fill
+                          className="object-cover"
+                          sizes="160px"
+                        />
+                      </motion.div>
+                    )}
 
-                    {/* Center image (phase 2+) lives inline and later expands via shared layout */}
-                    <motion.div
-                      layoutId="intro-center-image"
-                      className="relative overflow-hidden rounded-lg ring-1 ring-antique-white/40 shadow-2xl"
-                      initial={{ opacity: 0, scale: 0.85 }}
-                      animate={{
-                        opacity: phase >= 2 ? 1 : 0,
-                        scale: phase >= 2 ? 1 : 0.85,
-                      }}
-                      transition={{
-                        duration: 0.7,
-                        ease: [0.25, 0.46, 0.45, 0.94],
-                      }}
-                      style={{
-                        width:
-                          viewportWidth != null && viewportWidth < 640
-                            ? 52
-                            : 88,
-                        height:
-                          viewportWidth != null && viewportWidth < 640
-                            ? 64
-                            : 108,
-                      }}
-                    >
-                      <Image
-                        src={floralImages[1]}
-                        alt="Floral arrangement"
-                        fill
-                        className="object-cover"
-                        sizes="160px"
-                        priority
-                      />
-                    </motion.div>
+                    {phase >= 2 && (
+                      <motion.div
+                        key="intro-center"
+                        layoutId="intro-center-image"
+                        layout
+                        className="relative overflow-hidden rounded-lg ring-1 ring-antique-white/45 shadow-2xl w-[clamp(52px,7vw,112px)] h-[clamp(64px,8.5vw,138px)]"
+                        initial={{ opacity: 0, scale: 0.85 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{
+                          duration: 0.7,
+                          ease: [0.25, 0.46, 0.45, 0.94],
+                        }}
+                      >
+                        <Image
+                          src={heroImage}
+                          alt="Hero preview"
+                          fill
+                          className="object-cover"
+                          sizes="220px"
+                          priority
+                        />
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(253,252,240,0.18)_0%,transparent_55%)]" />
+                      </motion.div>
+                    )}
 
-                    <span className="italic text-muted-rose">by Hannah</span>
-                  </span>
-                </h1>
+                    {phase >= 3 && (
+                      <motion.div
+                        key="intro-right"
+                        layout
+                        className="relative overflow-hidden rounded-lg ring-1 ring-antique-white/35 shadow-2xl w-[clamp(44px,6vw,84px)] h-[clamp(56px,7.5vw,104px)]"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{
+                          duration: 0.6,
+                          ease: [0.25, 0.46, 0.45, 0.94],
+                          delay: 0.05,
+                        }}
+                      >
+                        <Image
+                          src={floralImages.right}
+                          alt="Floral arrangement"
+                          fill
+                          className="object-cover"
+                          sizes="160px"
+                        />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
-                {/* Right image (phase 3) */}
-                <motion.div
-                  className="relative overflow-hidden rounded-lg ring-1 ring-antique-white/35 shadow-2xl"
-                  style={{
-                    width:
-                      viewportWidth != null && viewportWidth < 640 ? 44 : 72,
-                    height:
-                      viewportWidth != null && viewportWidth < 640 ? 56 : 92,
-                  }}
-                  initial={{ opacity: 0, scale: 0.9, x: 0 }}
-                  animate={{
-                    opacity: phase >= 3 ? 1 : 0,
-                    scale: phase >= 3 ? 1 : 0.9,
-                    x: phase >= 3 ? 16 : 0,
-                  }}
-                  transition={{
-                    duration: 0.7,
-                    ease: [0.25, 0.46, 0.45, 0.94],
-                    delay: 0.06,
-                  }}
-                >
-                  <Image
-                    src={floralImages[2]}
-                    alt="Floral arrangement"
-                    fill
-                    className="object-cover"
-                    sizes="120px"
-                  />
-                </motion.div>
-              </div>
+                  <motion.span layout className="italic text-muted-rose">
+                    by Hannah
+                  </motion.span>
+                </span>
+              </motion.h1>
 
               <motion.div
                 className="mt-6 h-px bg-deep-sage/60 mx-auto"
@@ -245,21 +228,22 @@ export default function HeroIntro({
           {phase >= 4 && (
             <motion.div
               layoutId="intro-center-image"
-              className="fixed inset-0 z-[2]"
+              className="fixed inset-0 z-2"
               initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <Image
-                src={floralImages[1]}
+                src={heroImage}
                 alt="Hero background"
                 fill
                 className="object-cover"
                 sizes="100vw"
                 priority
               />
-              {/* Keep it colorful but readable */}
-              <div className="absolute inset-0 bg-linear-to-b from-antique-white/15 via-transparent to-soft-black/35" />
+              {/* Keep it colorful, not black: gentle contrast only */}
+              <div className="absolute inset-0 bg-linear-to-b from-antique-white/10 via-transparent to-soft-black/25" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(253,252,240,0.25)_0%,transparent_55%)]" />
             </motion.div>
           )}
         </motion.div>
