@@ -1,6 +1,10 @@
 import { Metadata } from "next";
 import { MasonryGrid } from "@/components/portfolio";
-import { RevealOnScroll, FloatingFlowers } from "@/components/animations";
+import {
+  RevealOnScroll,
+  FloatingFlowers,
+  FloralPattern,
+} from "@/components/animations";
 
 export const metadata: Metadata = {
   title: "Portfolio | Flora by Hannah",
@@ -14,7 +18,25 @@ export default function PortfolioPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
         <FloatingFlowers density="medium" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="absolute inset-0 pointer-events-none">
+          <FloralPattern
+            variant="leaf"
+            animate={false}
+            className="absolute -top-8 -left-8 w-52 h-52 sm:w-80 sm:h-80 text-deep-sage/12 rotate-12"
+          />
+          <FloralPattern
+            variant="petal"
+            animate={false}
+            className="absolute -bottom-10 -right-8 w-56 h-56 sm:w-80 sm:h-80 text-muted-rose/14 -rotate-12"
+          />
+          <FloralPattern
+            variant="blossom"
+            animate={false}
+            className="absolute top-24 right-12 w-24 h-24 sm:w-32 sm:h-32 text-deep-sage/10 rotate-6"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <RevealOnScroll>
             <span className="text-sm uppercase tracking-[0.3em] text-[#4A5D4E] mb-4 block">
               Our Work
@@ -38,8 +60,21 @@ export default function PortfolioPage() {
       </section>
 
       {/* Portfolio Grid */}
-      <section className="pb-24 lg:pb-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="pb-24 lg:pb-32 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <FloralPattern
+            variant="branch"
+            animate={false}
+            className="absolute top-16 left-10 w-24 h-24 sm:w-32 sm:h-32 text-muted-rose/10 -rotate-6"
+          />
+          <FloralPattern
+            variant="leaf"
+            animate={false}
+            className="absolute bottom-10 right-10 w-28 h-28 sm:w-36 sm:h-36 text-deep-sage/10 rotate-6"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <MasonryGrid />
         </div>
       </section>

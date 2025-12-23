@@ -1,5 +1,9 @@
 import { Metadata } from "next";
-import { RevealOnScroll, FloatingFlowers } from "@/components/animations";
+import {
+  RevealOnScroll,
+  FloatingFlowers,
+  FloralPattern,
+} from "@/components/animations";
 import { ContactForm } from "@/components/contact";
 
 export const metadata: Metadata = {
@@ -14,7 +18,25 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
         <FloatingFlowers density="light" />
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+        <div className="absolute inset-0 pointer-events-none">
+          <FloralPattern
+            variant="branch"
+            animate={false}
+            className="absolute -top-10 -left-10 w-52 h-52 sm:w-80 sm:h-80 text-muted-rose/14 rotate-12"
+          />
+          <FloralPattern
+            variant="leaf"
+            animate={false}
+            className="absolute -bottom-12 -right-10 w-56 h-56 sm:w-80 sm:h-80 text-deep-sage/12 -rotate-12"
+          />
+          <FloralPattern
+            variant="blossom"
+            animate={false}
+            className="absolute top-24 right-12 w-24 h-24 sm:w-32 sm:h-32 text-deep-sage/10 rotate-6"
+          />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
           <RevealOnScroll>
             <span className="text-sm uppercase tracking-[0.3em] text-[#4A5D4E] mb-4 block">
               Let&apos;s Connect
@@ -38,8 +60,26 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="pb-24 lg:pb-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="pb-24 lg:pb-32 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <FloralPattern
+            variant="petal"
+            animate={false}
+            className="absolute -top-12 -right-10 w-44 h-44 sm:w-64 sm:h-64 text-muted-rose/12 rotate-12"
+          />
+          <FloralPattern
+            variant="branch"
+            animate={false}
+            className="absolute -bottom-14 -left-10 w-56 h-56 sm:w-80 sm:h-80 text-deep-sage/10 -rotate-12"
+          />
+          <FloralPattern
+            variant="blossom"
+            animate={false}
+            className="absolute top-20 left-12 w-24 h-24 sm:w-32 sm:h-32 text-deep-sage/10 -rotate-6"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
             {/* Contact Info */}
             <RevealOnScroll direction="left" className="lg:col-span-2">

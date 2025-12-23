@@ -1,7 +1,11 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { RevealOnScroll, FloatingFlowers } from "@/components/animations";
+import {
+  RevealOnScroll,
+  FloatingFlowers,
+  FloralPattern,
+} from "@/components/animations";
 
 export const metadata: Metadata = {
   title: "About | Flora by Hannah",
@@ -15,7 +19,25 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden relative">
         <FloatingFlowers density="medium" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="absolute inset-0 pointer-events-none">
+          <FloralPattern
+            variant="branch"
+            animate={false}
+            className="absolute -top-8 -left-8 w-52 h-52 sm:w-80 sm:h-80 text-muted-rose/14 rotate-12"
+          />
+          <FloralPattern
+            variant="leaf"
+            animate={false}
+            className="absolute -bottom-10 -right-8 w-56 h-56 sm:w-80 sm:h-80 text-deep-sage/12 -rotate-12"
+          />
+          <FloralPattern
+            variant="blossom"
+            animate={false}
+            className="absolute top-24 right-10 w-24 h-24 sm:w-32 sm:h-32 text-deep-sage/10 rotate-6"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Content */}
             <div className="order-2 lg:order-1">
@@ -71,8 +93,21 @@ export default function AboutPage() {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 lg:py-28 bg-[#FAF9F5]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-28 bg-[#FAF9F5] relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <FloralPattern
+            variant="petal"
+            animate={false}
+            className="absolute -top-10 -right-10 w-48 h-48 sm:w-72 sm:h-72 text-muted-rose/12 rotate-12"
+          />
+          <FloralPattern
+            variant="branch"
+            animate={false}
+            className="absolute -bottom-14 -left-10 w-56 h-56 sm:w-80 sm:h-80 text-deep-sage/10 -rotate-12"
+          />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
           <RevealOnScroll>
             <h2 className="text-4xl lg:text-5xl font-serif text-[#2D2D2D] text-center mb-12">
               My Story
@@ -123,8 +158,21 @@ export default function AboutPage() {
       </section>
 
       {/* Asymmetrical Gallery */}
-      <section className="py-20 lg:py-28 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-28 overflow-hidden relative">
+        <div className="absolute inset-0 pointer-events-none">
+          <FloralPattern
+            variant="leaf"
+            animate={false}
+            className="absolute -top-10 -left-10 w-52 h-52 sm:w-80 sm:h-80 text-deep-sage/10 rotate-12"
+          />
+          <FloralPattern
+            variant="blossom"
+            animate={false}
+            className="absolute -bottom-12 -right-10 w-52 h-52 sm:w-80 sm:h-80 text-muted-rose/12 -rotate-12"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-12 gap-6 lg:gap-8">
             {/* Large image */}
             <RevealOnScroll
@@ -175,7 +223,25 @@ export default function AboutPage() {
       {/* Testimonials Section */}
       <section className="py-20 lg:py-28 bg-[#4A5D4E] relative overflow-hidden">
         <FloatingFlowers density="light" />
-        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+        <div className="absolute inset-0 pointer-events-none">
+          <FloralPattern
+            variant="branch"
+            animate={false}
+            className="absolute -top-10 -left-10 w-56 h-56 sm:w-80 sm:h-80 text-antique-white/12 rotate-12"
+          />
+          <FloralPattern
+            variant="petal"
+            animate={false}
+            className="absolute -bottom-12 -right-10 w-56 h-56 sm:w-80 sm:h-80 text-muted-rose/14 -rotate-12"
+          />
+          <FloralPattern
+            variant="leaf"
+            animate={false}
+            className="absolute top-24 right-12 w-24 h-24 sm:w-32 sm:h-32 text-antique-white/10 rotate-6"
+          />
+        </div>
+
+        <div className="max-w-5xl mx-auto px-6 lg:px-12 relative z-10">
           <RevealOnScroll className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-serif text-[#FDFCF0] mb-4">
               What Brides Say
@@ -210,8 +276,21 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <FloralPattern
+            variant="blossom"
+            animate={false}
+            className="absolute -top-10 -right-10 w-44 h-44 sm:w-64 sm:h-64 text-muted-rose/12 rotate-12"
+          />
+          <FloralPattern
+            variant="branch"
+            animate={false}
+            className="absolute -bottom-12 -left-10 w-52 h-52 sm:w-72 sm:h-72 text-deep-sage/10 -rotate-12"
+          />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
           <RevealOnScroll>
             <h2 className="text-4xl lg:text-5xl font-serif text-[#2D2D2D] mb-6">
               I&apos;d love to bring flowers into your life

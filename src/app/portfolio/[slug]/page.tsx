@@ -2,7 +2,11 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { RevealOnScroll, FloatingFlowers } from "@/components/animations";
+import {
+  RevealOnScroll,
+  FloatingFlowers,
+  FloralPattern,
+} from "@/components/animations";
 
 // Mock data for development
 const mockPortfolioItems = [
@@ -63,7 +67,25 @@ export default async function PortfolioDetailPage({ params }: Props) {
       {/* Hero Section */}
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
         <FloatingFlowers density="light" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="absolute inset-0 pointer-events-none">
+          <FloralPattern
+            variant="branch"
+            animate={false}
+            className="absolute -top-8 -left-8 w-52 h-52 sm:w-80 sm:h-80 text-muted-rose/14 rotate-12"
+          />
+          <FloralPattern
+            variant="leaf"
+            animate={false}
+            className="absolute -bottom-10 -right-8 w-56 h-56 sm:w-80 sm:h-80 text-deep-sage/12 -rotate-12"
+          />
+          <FloralPattern
+            variant="blossom"
+            animate={false}
+            className="absolute top-24 right-10 w-24 h-24 sm:w-32 sm:h-32 text-deep-sage/10 rotate-6"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <RevealOnScroll>
             <Link
               href="/portfolio"
@@ -107,8 +129,21 @@ export default async function PortfolioDetailPage({ params }: Props) {
       </section>
 
       {/* Main Image */}
-      <section className="pb-16 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="pb-16 lg:pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <FloralPattern
+            variant="petal"
+            animate={false}
+            className="absolute -top-12 -right-10 w-44 h-44 sm:w-64 sm:h-64 text-muted-rose/10 rotate-12"
+          />
+          <FloralPattern
+            variant="leaf"
+            animate={false}
+            className="absolute -bottom-10 -left-10 w-52 h-52 sm:w-72 sm:h-72 text-deep-sage/10 -rotate-12"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <RevealOnScroll>
             <div className="relative aspect-[16/9] overflow-hidden bg-[#FAF9F5]">
               <Image
@@ -126,8 +161,21 @@ export default async function PortfolioDetailPage({ params }: Props) {
 
       {/* Gallery Grid */}
       {item.images && item.images.length > 0 && (
-        <section className="pb-24 lg:pb-32">
-          <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <section className="pb-24 lg:pb-32 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <FloralPattern
+              variant="branch"
+              animate={false}
+              className="absolute top-16 left-10 w-24 h-24 sm:w-32 sm:h-32 text-muted-rose/10 -rotate-6"
+            />
+            <FloralPattern
+              variant="blossom"
+              animate={false}
+              className="absolute bottom-12 right-10 w-28 h-28 sm:w-36 sm:h-36 text-deep-sage/10 rotate-6"
+            />
+          </div>
+
+          <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {item.images.map((image, index) => (
                 <RevealOnScroll
@@ -154,7 +202,25 @@ export default async function PortfolioDetailPage({ params }: Props) {
       {/* CTA Section */}
       <section className="py-20 lg:py-28 bg-[#4A5D4E] relative overflow-hidden">
         <FloatingFlowers density="medium" />
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+        <div className="absolute inset-0 pointer-events-none">
+          <FloralPattern
+            variant="leaf"
+            animate={false}
+            className="absolute -top-10 -left-10 w-56 h-56 sm:w-80 sm:h-80 text-antique-white/12 rotate-12"
+          />
+          <FloralPattern
+            variant="petal"
+            animate={false}
+            className="absolute -bottom-12 -right-10 w-56 h-56 sm:w-80 sm:h-80 text-muted-rose/14 -rotate-12"
+          />
+          <FloralPattern
+            variant="blossom"
+            animate={false}
+            className="absolute top-24 right-12 w-24 h-24 sm:w-32 sm:h-32 text-antique-white/10 rotate-6"
+          />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
           <RevealOnScroll>
             <h2 className="text-4xl lg:text-5xl font-serif text-[#FDFCF0] mb-6">
               Love What You See?

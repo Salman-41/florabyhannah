@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FloatingFlowers } from "@/components/animations";
+import { FloatingFlowers, FloralPattern } from "@/components/animations";
 import { RevealOnScroll } from "@/components/animations";
 
 interface ProcessStep {
@@ -46,7 +46,25 @@ export default function ProcessTimeline() {
   return (
     <section className="py-20 lg:py-28 bg-[#FDFCF0] relative overflow-hidden">
       <FloatingFlowers density="medium" />
-      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+      <div className="absolute inset-0 pointer-events-none">
+        <FloralPattern
+          variant="leaf"
+          animate={false}
+          className="absolute -top-10 -left-10 w-52 h-52 sm:w-80 sm:h-80 text-deep-sage/12 rotate-12"
+        />
+        <FloralPattern
+          variant="petal"
+          animate={false}
+          className="absolute -bottom-12 -right-10 w-56 h-56 sm:w-80 sm:h-80 text-muted-rose/14 -rotate-12"
+        />
+        <FloralPattern
+          variant="blossom"
+          animate={false}
+          className="absolute top-24 right-12 w-24 h-24 sm:w-32 sm:h-32 text-deep-sage/10 rotate-6"
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 lg:px-12 relative z-10">
         <RevealOnScroll className="text-center mb-16">
           <span className="text-sm uppercase tracking-[0.3em] text-[#4A5D4E] mb-4 block">
             How It Works
