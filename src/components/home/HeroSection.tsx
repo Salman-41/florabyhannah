@@ -19,8 +19,8 @@ export default function HeroSection({
   title = (
     <>
       Floral design that brings{" "}
-      <span className="italic text-[#C9A9A6]">life and color</span> to your most
-      special days
+      <span className="italic text-muted-rose">life and color</span> to your
+      most special days
     </>
   ),
   subtitle,
@@ -43,7 +43,7 @@ export default function HeroSection({
   return (
     <section
       ref={ref}
-      className="relative w-full overflow-hidden bg-[#1a1a1a] min-h-[100svh]"
+      className="relative w-full overflow-hidden bg-soft-black min-h-svh"
     >
       {/* Background Image with Parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ y, scale }}>
@@ -66,7 +66,7 @@ export default function HeroSection({
       <FloatingFlowers density="light" />
 
       {/* Section corner florals (subtle) */}
-      <div className="absolute inset-0 z-[1] pointer-events-none">
+      <div className="absolute inset-0 z-1 pointer-events-none">
         <FloralPattern
           variant="branch"
           animate={false}
@@ -94,7 +94,7 @@ export default function HeroSection({
       {/* Content */}
       {showContent && (
         <motion.div
-          className="relative z-10 min-h-[100svh] flex flex-col items-center justify-center text-center px-6 pt-24 sm:pt-28 pb-16 sm:pb-20"
+          className="relative z-10 min-h-svh flex flex-col items-center justify-center text-center px-6 pt-24 sm:pt-28 pb-16 sm:pb-20"
           style={{ opacity }}
         >
           {/* Center readability veil (keeps the vibe, makes text always legible) */}
@@ -115,7 +115,7 @@ export default function HeroSection({
               height="30"
               viewBox="0 0 60 30"
               fill="none"
-              className="text-[#C9A9A6]"
+              className="text-muted-rose"
             >
               <path
                 d="M30 0C30 16.5685 16.5685 30 0 30"
@@ -131,7 +131,7 @@ export default function HeroSection({
           </motion.div>
 
           <motion.span
-            className="text-xs md:text-sm uppercase tracking-[0.4em] text-[#C9A9A6] mb-6 font-light drop-shadow-[0_6px_18px_rgba(0,0,0,0.55)]"
+            className="text-xs md:text-sm uppercase tracking-[0.4em] text-muted-rose mb-6 font-light drop-shadow-[0_6px_18px_rgba(0,0,0,0.55)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -140,7 +140,7 @@ export default function HeroSection({
           </motion.span>
 
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-[#FDFCF0] max-w-5xl leading-[1.15] mb-8 drop-shadow-[0_10px_28px_rgba(0,0,0,0.65)]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-antique-white max-w-5xl leading-[1.15] mb-8 drop-shadow-[0_10px_28px_rgba(0,0,0,0.65)]"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
@@ -150,7 +150,7 @@ export default function HeroSection({
 
           {subtitle && (
             <motion.p
-              className="text-sm sm:text-base md:text-lg text-[#FDFCF0]/70 max-w-xl mb-10 sm:mb-12 font-light leading-relaxed"
+              className="text-sm sm:text-base md:text-lg text-antique-white/70 max-w-xl mb-10 sm:mb-12 font-light leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -167,10 +167,10 @@ export default function HeroSection({
           >
             <Link
               href={ctaLink}
-              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-transparent text-[#FDFCF0] text-xs uppercase tracking-[0.25em] overflow-hidden border border-[#FDFCF0]/30 drop-shadow-[0_10px_24px_rgba(0,0,0,0.45)]"
+              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-transparent text-antique-white text-xs uppercase tracking-[0.25em] overflow-hidden border border-antique-white/30 drop-shadow-[0_10px_24px_rgba(0,0,0,0.45)]"
             >
               <motion.span
-                className="absolute inset-0 bg-[#FDFCF0]"
+                className="absolute inset-0 bg-antique-white"
                 initial={{ y: "100%" }}
                 whileHover={{ y: 0 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -185,16 +185,16 @@ export default function HeroSection({
             </Link>
             <Link
               href="/contact"
-              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-[#C9A9A6] text-[#1a1a1a] text-xs uppercase tracking-[0.25em] overflow-hidden drop-shadow-[0_12px_30px_rgba(0,0,0,0.45)]"
+              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-muted-rose text-[#1a1a1a] text-xs uppercase tracking-[0.25em] overflow-hidden drop-shadow-[0_12px_30px_rgba(0,0,0,0.45)]"
             >
               <motion.span
-                className="absolute inset-0 bg-[#4A5D4E]"
+                className="absolute inset-0 bg-deep-sage"
                 initial={{ y: "100%" }}
                 whileHover={{ y: 0 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
               />
               <motion.span
-                className="relative z-10 inline-block transition-colors duration-500 group-hover:text-[#FDFCF0]"
+                className="relative z-10 inline-block transition-colors duration-500 group-hover:text-antique-white"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -207,11 +207,11 @@ export default function HeroSection({
 
       {/* Side decorative elements */}
       <div className="absolute left-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4 z-10">
-        <div className="w-px h-24 bg-gradient-to-b from-transparent via-[#C9A9A6]/30 to-transparent" />
-        <span className="text-[10px] uppercase tracking-[0.2em] text-[#FDFCF0]/30 rotate-90 whitespace-nowrap">
+        <div className="w-px h-24 bg-linear-to-b from-transparent via-muted-rose/30 to-transparent" />
+        <span className="text-[10px] uppercase tracking-[0.2em] text-antique-white/30 rotate-90 whitespace-nowrap">
           Est. 2018
         </span>
-        <div className="w-px h-24 bg-gradient-to-b from-transparent via-[#C9A9A6]/30 to-transparent" />
+        <div className="w-px h-24 bg-linear-to-b from-transparent via-muted-rose/30 to-transparent" />
       </div>
     </section>
   );
