@@ -174,7 +174,7 @@ export default function MasonryGrid({
               className={`px-6 py-3 text-sm uppercase tracking-[0.15em] transition-all duration-300 whitespace-nowrap ${
                 activeCategory === category
                   ? "bg-[#4A5D4E] text-[#FDFCF0]"
-                  : "bg-transparent text-[#2D2D2D] border border-[#B8AFA6] hover:bg-[#FAF9F5]"
+                  : "bg-transparent text-deep-taupe border border-[#B8AFA6] hover:bg-[#FAF9F5]"
               }`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -227,7 +227,7 @@ export default function MasonryGrid({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          <p className="text-lg text-[#2D2D2D]/60">
+          <p className="text-lg text-deep-taupe/60">
             No items found in this category.
           </p>
         </motion.div>

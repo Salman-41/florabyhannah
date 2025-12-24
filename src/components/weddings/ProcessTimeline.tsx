@@ -69,7 +69,7 @@ export default function ProcessTimeline() {
           <span className="text-sm uppercase tracking-[0.3em] text-[#4A5D4E] mb-4 block">
             How It Works
           </span>
-          <h2 className="text-4xl lg:text-5xl font-serif text-[#2D2D2D]">
+          <h2 className="text-4xl lg:text-5xl font-serif text-deep-taupe">
             The Process
           </h2>
         </RevealOnScroll>
@@ -98,10 +98,10 @@ export default function ProcessTimeline() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl lg:text-2xl font-serif text-[#2D2D2D] mb-3">
+                  <h3 className="text-xl lg:text-2xl font-serif text-deep-taupe mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-[#2D2D2D]/70 leading-relaxed">
+                  <p className="text-deep-taupe/70 leading-relaxed">
                     {step.description}
                   </p>
                 </motion.div>

@@ -32,7 +32,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="antialiased bg-[#FDFCF0] text-[#2D2D2D] w-full overflow-x-clip">
+      <head>
+        {/* Romantic Google Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="antialiased bg-antique-white text-deep-taupe w-full overflow-x-clip">
         <MagneticCursor />
         <Navigation />
         <main className="min-h-screen w-full">{children}</main>

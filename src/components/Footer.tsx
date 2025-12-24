@@ -64,11 +64,11 @@ export default function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="text-[#2D2D2D]/70 leading-relaxed max-w-md mb-6">
+            <p className="text-deep-taupe/70 leading-relaxed max-w-md mb-6">
               Creating classic and timeless floral designs that bring your most
               special days to life. Charleston&apos;s premier wedding florist.
             </p>
-            <p className="text-sm text-[#2D2D2D]/50">
+            <p className="text-sm text-deep-taupe/50">
               Charleston, South Carolina
             </p>
           </div>
@@ -83,7 +83,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[#2D2D2D]/70 hover:text-[#4A5D4E] transition-colors duration-300"
+                    className="text-deep-taupe/70 hover:text-deep-sage transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -126,7 +126,7 @@ export default function Footer() {
           <p className="text-sm text-[#2D2D2D]/50">
             © {new Date().getFullYear()} Flora by Hannah. All rights reserved.
           </p>
-          <p className="text-xs text-[#2D2D2D]/40">Now booking 2025 weddings</p>
+          <p className="text-xs text-deep-taupe/40">Now booking 2025 weddings</p>
         </div>
       </div>
     </footer>
