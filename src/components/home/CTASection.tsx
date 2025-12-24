@@ -31,13 +31,13 @@ export default function CTASection() {
           sizes="100vw"
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-[#1a1a1a]/70" />
+        <div className="absolute inset-0 bg-soft-black/70" />
         {/* Gradient overlays for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a]/30 via-transparent to-[#1a1a1a]/50" />
+        <div className="absolute inset-0 bg-linear-to-b from-soft-black/28 via-transparent to-soft-black/55" />
       </motion.div>
 
       {/* Decorative Elements */}
-      <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 z-1 pointer-events-none overflow-hidden">
         <FloatingFlowers density="medium" />
 
         {/* Section corner florals */}
@@ -65,7 +65,7 @@ export default function CTASection() {
 
         {/* Animated floating circles */}
         <motion.div
-          className="absolute top-20 left-[15%] w-64 h-64 rounded-full border border-[#FDFCF0]/10"
+          className="absolute top-20 left-[15%] w-64 h-64 rounded-full border border-antique-white/10"
           animate={{
             scale: [1, 1.1, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -73,7 +73,7 @@ export default function CTASection() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-20 right-[10%] w-96 h-96 rounded-full border border-[#C9A9A6]/10"
+          className="absolute bottom-20 right-[10%] w-96 h-96 rounded-full border border-muted-rose/10"
           animate={{
             scale: [1.1, 1, 1.1],
             opacity: [0.2, 0.4, 0.2],
@@ -83,12 +83,12 @@ export default function CTASection() {
 
         {/* Corner decorative lines */}
         <div className="absolute top-12 left-12 w-24 h-24">
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-[#C9A9A6]/40 to-transparent" />
-          <div className="absolute top-0 left-0 h-full w-px bg-gradient-to-b from-[#C9A9A6]/40 to-transparent" />
+          <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-muted-rose/40 to-transparent" />
+          <div className="absolute top-0 left-0 h-full w-px bg-linear-to-b from-muted-rose/40 to-transparent" />
         </div>
         <div className="absolute bottom-12 right-12 w-24 h-24">
-          <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-l from-[#C9A9A6]/40 to-transparent" />
-          <div className="absolute bottom-0 right-0 h-full w-px bg-gradient-to-t from-[#C9A9A6]/40 to-transparent" />
+          <div className="absolute bottom-0 right-0 w-full h-px bg-linear-to-l from-muted-rose/40 to-transparent" />
+          <div className="absolute bottom-0 right-0 h-full w-px bg-linear-to-t from-muted-rose/40 to-transparent" />
         </div>
       </div>
 
@@ -109,7 +109,7 @@ export default function CTASection() {
             height="60"
             viewBox="0 0 60 60"
             fill="none"
-            className="mx-auto text-[#C9A9A6]"
+            className="mx-auto text-muted-rose"
           >
             <circle
               cx="30"
@@ -166,7 +166,7 @@ export default function CTASection() {
         </motion.div>
 
         <motion.span
-          className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.4em] text-[#C9A9A6] mb-6"
+          className="fb-kicker-pill fb-kicker-pill--dark mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -176,18 +176,28 @@ export default function CTASection() {
         </motion.span>
 
         <motion.h2
-          className="text-5xl lg:text-6xl font-serif text-[#FDFCF0] mb-6 leading-[1.2]"
+          className="text-5xl lg:text-6xl font-serif text-antique-white mb-6 leading-[1.12] tracking-[-0.02em]"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           Now Booking{" "}
-          <span className="italic text-[#C9A9A6]">2025 Weddings</span>
+          <span className="italic text-muted-rose">2025 Weddings</span>
         </motion.h2>
 
+        <motion.div
+          className="mb-10"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.25 }}
+        >
+          <div className="fb-divider" />
+        </motion.div>
+
         <motion.p
-          className="text-lg lg:text-xl text-[#FDFCF0]/70 max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-lg lg:text-xl text-antique-white/70 max-w-2xl mx-auto mb-12 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -204,54 +214,57 @@ export default function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <Link href="/contact">
-            <motion.button
-              className="group relative px-14 py-5 bg-[#FDFCF0] text-[#1a1a1a] text-sm uppercase tracking-[0.25em] overflow-hidden"
+          <Link
+            href="/contact"
+            className="group relative inline-flex items-center justify-center px-14 py-5 bg-antique-white text-[#1a1a1a] text-sm uppercase tracking-[0.25em] overflow-hidden rounded-full drop-shadow-[0_14px_34px_rgba(0,0,0,0.45)]"
+          >
+            <motion.span
+              className="absolute inset-0 bg-deep-sage"
+              initial={{ y: "100%" }}
+              whileHover={{ y: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            />
+            <motion.span
+              className="relative z-10 transition-colors duration-500 group-hover:text-antique-white"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="relative z-10 transition-colors duration-500 group-hover:text-[#FDFCF0]">
-                Schedule a Consultation
-              </span>
-              <motion.div
-                className="absolute inset-0 bg-[#4A5D4E]"
-                initial={{ y: "100%" }}
-                whileHover={{ y: 0 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-              />
-            </motion.button>
+              Schedule a Consultation
+            </motion.span>
           </Link>
         </motion.div>
 
         {/* Trust indicators */}
         <motion.div
-          className="flex flex-wrap items-center justify-center gap-8 mt-16 pt-12 border-t border-[#FDFCF0]/10"
+          className="flex flex-wrap items-center justify-center gap-8 mt-16 pt-12 border-t border-antique-white/10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <div className="text-center">
-            <span className="block text-3xl font-serif text-[#FDFCF0]">
+            <span className="block text-3xl font-serif text-antique-white">
               150+
             </span>
-            <span className="text-xs uppercase tracking-wider text-[#FDFCF0]/50">
+            <span className="text-xs uppercase tracking-wider text-antique-white/50">
               Weddings Created
             </span>
           </div>
-          <div className="w-px h-12 bg-[#FDFCF0]/20 hidden sm:block" />
+          <div className="w-px h-12 bg-antique-white/20 hidden sm:block" />
           <div className="text-center">
-            <span className="block text-3xl font-serif text-[#FDFCF0]">
+            <span className="block text-3xl font-serif text-antique-white">
               5.0
             </span>
-            <span className="text-xs uppercase tracking-wider text-[#FDFCF0]/50">
+            <span className="text-xs uppercase tracking-wider text-antique-white/50">
               Google Rating
             </span>
           </div>
-          <div className="w-px h-12 bg-[#FDFCF0]/20 hidden sm:block" />
+          <div className="w-px h-12 bg-antique-white/20 hidden sm:block" />
           <div className="text-center">
-            <span className="block text-3xl font-serif text-[#FDFCF0]">7+</span>
-            <span className="text-xs uppercase tracking-wider text-[#FDFCF0]/50">
+            <span className="block text-3xl font-serif text-antique-white">
+              7+
+            </span>
+            <span className="text-xs uppercase tracking-wider text-antique-white/50">
               Years Experience
             </span>
           </div>

@@ -71,6 +71,33 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
+@layer components {
+  /* Premium / romantic section primitives */
+  .fb-kicker-pill {
+    @apply inline-flex items-center gap-3 rounded-full px-5 py-2 text-xs uppercase tracking-[0.4em] font-light border backdrop-blur-sm;
+  }
+
+  .fb-kicker-pill--light {
+    @apply border-warm-taupe/30 bg-antique-white/70 text-deep-sage shadow-sm;
+  }
+
+  .fb-kicker-pill--dark {
+    @apply border-antique-white/12 bg-soft-black/28 text-muted-rose shadow-sm;
+  }
+
+  .fb-divider {
+    @apply mx-auto h-px w-44 bg-linear-to-r from-transparent via-muted-rose/45 to-transparent;
+  }
+
+  .fb-panel-light {
+    @apply rounded-3xl border border-warm-taupe/25 bg-antique-white/70 backdrop-blur-sm;
+  }
+
+  .fb-panel-dark {
+    @apply rounded-3xl border border-antique-white/14 bg-soft-black/22 backdrop-blur-sm;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

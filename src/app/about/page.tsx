@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#FDFCF0]">
+    <div className="min-h-screen bg-antique-white">
       {/* Hero Section */}
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden relative">
         <FloatingFlowers density="medium" />
@@ -42,25 +42,29 @@ export default function AboutPage() {
             {/* Content */}
             <div className="order-2 lg:order-1">
               <RevealOnScroll>
-                <span className="text-sm uppercase tracking-[0.3em] text-[#4A5D4E] mb-4 block">
+                <span className="fb-kicker-pill fb-kicker-pill--light mb-6">
                   About Flora
                 </span>
               </RevealOnScroll>
 
               <RevealOnScroll delay={0.1}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif text-[#2D2D2D] mb-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif text-charcoal mb-6 leading-[1.06] tracking-[-0.02em]">
                   Hi! I&apos;m Hannah
                 </h1>
               </RevealOnScroll>
 
+              <RevealOnScroll delay={0.15}>
+                <div className="fb-divider mx-0 w-40 mb-6" />
+              </RevealOnScroll>
+
               <RevealOnScroll delay={0.2}>
-                <p className="text-xl lg:text-2xl text-[#2D2D2D]/80 font-serif italic mb-6">
+                <p className="text-xl lg:text-2xl text-charcoal/80 font-serif italic mb-6">
                   Owner & Founder of Flora by Hannah
                 </p>
               </RevealOnScroll>
 
               <RevealOnScroll delay={0.3}>
-                <p className="text-lg text-[#2D2D2D]/70 leading-relaxed">
+                <p className="text-lg text-charcoal/70 leading-relaxed">
                   I fell in love with flowers growing up, and I started Flora as
                   a way to hopefully share my love for these beautiful creations
                   with as many people as possible.

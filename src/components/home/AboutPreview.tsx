@@ -12,9 +12,15 @@ import {
 
 export default function AboutPreview() {
   return (
-    <section className="py-24 lg:py-32 bg-[#FDFCF0] relative overflow-hidden">
+    <section className="py-24 lg:py-32 bg-antique-white relative overflow-hidden">
       {/* Floating Floral Patterns */}
       <FloatingFlowers density="medium" />
+
+      {/* Soft romantic glows */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-24 left-1/2 h-112 w-[min(92vw,56rem)] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(201,169,166,0.18)_0%,rgba(201,169,166,0.08)_38%,transparent_72%)] blur-2xl" />
+        <div className="absolute -bottom-28 right-[-10%] h-112 w-md rounded-full bg-[radial-gradient(ellipse_at_center,rgba(74,93,78,0.14)_0%,rgba(74,93,78,0.06)_45%,transparent_72%)] blur-2xl" />
+      </div>
 
       {/* Section corner florals */}
       <div className="absolute inset-0 pointer-events-none">
@@ -40,7 +46,7 @@ export default function AboutPreview() {
           {/* Image */}
           <RevealOnScroll direction="left">
             <div className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-4/5 overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop"
                   alt="Hannah - Flora by Hannah"
@@ -52,7 +58,7 @@ export default function AboutPreview() {
 
               {/* Decorative border */}
               <motion.div
-                className="absolute inset-0 border-2 border-[#4A5D4E]/20 -m-2 sm:-m-4 pointer-events-none"
+                className="absolute inset-0 border-2 border-deep-sage/20 -m-2 sm:-m-4 pointer-events-none"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -78,30 +84,33 @@ export default function AboutPreview() {
           {/* Content */}
           <div>
             <RevealOnScroll>
-              <div className="flex items-center gap-4 mb-6">
-                <span className="w-12 h-px bg-[#4A5D4E]" />
-                <span className="text-xs uppercase tracking-[0.3em] text-[#4A5D4E]">
+              <div className="flex items-center justify-center lg:justify-start mb-7">
+                <span className="fb-kicker-pill fb-kicker-pill--light">
                   About Flora
                 </span>
               </div>
             </RevealOnScroll>
 
             <RevealOnScroll delay={0.1}>
-              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-serif text-[#2D2D2D] mb-6 leading-[1.1]">
+              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-serif text-charcoal mb-5 leading-[1.08] tracking-[-0.02em]">
                 Your Charleston{" "}
-                <span className="italic text-[#C9A9A6]">Wedding Florist</span>
+                <span className="italic text-muted-rose">Wedding Florist</span>
               </h2>
+            </RevealOnScroll>
+
+            <RevealOnScroll delay={0.15}>
+              <div className="fb-divider mx-0 w-40 mb-8" />
             </RevealOnScroll>
 
             <RevealOnScroll delay={0.2}>
               <div className="space-y-5 mb-10">
-                <p className="text-lg text-[#2D2D2D]/70 leading-relaxed">
+                <p className="text-lg text-charcoal/70 leading-relaxed">
                   Hi! My name is Hannah, and I&apos;m the owner and founder of
                   Flora by Hannah. I fell in love with flowers growing up, and I
                   started Flora as a way to hopefully share my love for these
                   beautiful creations with as many people as possible.
                 </p>
-                <p className="text-lg text-[#2D2D2D]/70 leading-relaxed">
+                <p className="text-lg text-charcoal/70 leading-relaxed">
                   Flora Designs specializes in creating classic and timeless
                   florals that bring weddings and events to life. I love to
                   create floral moments that make your special day
@@ -112,28 +121,28 @@ export default function AboutPreview() {
 
             {/* Stats */}
             <RevealOnScroll delay={0.3}>
-              <div className="grid grid-cols-3 gap-8 py-8 mb-10 border-y border-[#B8AFA6]/30">
+              <div className="grid grid-cols-3 gap-8 py-8 mb-10 border-y border-warm-taupe/30">
                 <div>
-                  <div className="text-3xl lg:text-4xl font-serif text-[#4A5D4E] mb-2">
+                  <div className="text-3xl lg:text-4xl font-serif text-deep-sage mb-2">
                     150+
                   </div>
-                  <div className="text-xs uppercase tracking-wider text-[#2D2D2D]/50">
+                  <div className="text-xs uppercase tracking-wider text-charcoal/50">
                     Weddings
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl lg:text-4xl font-serif text-[#4A5D4E] mb-2">
+                  <div className="text-3xl lg:text-4xl font-serif text-deep-sage mb-2">
                     7
                   </div>
-                  <div className="text-xs uppercase tracking-wider text-[#2D2D2D]/50">
+                  <div className="text-xs uppercase tracking-wider text-charcoal/50">
                     Years
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl lg:text-4xl font-serif text-[#4A5D4E] mb-2">
+                  <div className="text-3xl lg:text-4xl font-serif text-deep-sage mb-2">
                     5★
                   </div>
-                  <div className="text-xs uppercase tracking-wider text-[#2D2D2D]/50">
+                  <div className="text-xs uppercase tracking-wider text-charcoal/50">
                     Rating
                   </div>
                 </div>
@@ -144,11 +153,11 @@ export default function AboutPreview() {
               <MagneticWrapper>
                 <Link
                   href="/about"
-                  className="group inline-flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-[#4A5D4E] hover:text-[#C9A9A6] transition-colors duration-300"
+                  className="group inline-flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-deep-sage hover:text-muted-rose transition-colors duration-300"
                 >
                   Read My Story
                   <motion.span
-                    className="flex items-center justify-center w-10 h-10 rounded-full border border-[#4A5D4E] group-hover:bg-[#4A5D4E] group-hover:text-[#FDFCF0] transition-all duration-300"
+                    className="flex items-center justify-center w-10 h-10 rounded-full border border-deep-sage group-hover:bg-deep-sage group-hover:text-antique-white transition-all duration-300"
                     whileHover={{ x: 5 }}
                   >
                     →

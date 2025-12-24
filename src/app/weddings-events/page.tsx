@@ -63,7 +63,7 @@ const services = [
 
 export default function WeddingsEventsPage() {
   return (
-    <div className="min-h-screen bg-[#FDFCF0]">
+    <div className="min-h-screen bg-antique-white">
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <FloatingFlowers density="light" />
@@ -92,24 +92,28 @@ export default function WeddingsEventsPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-[#1A1A1A]/50" />
+          <div className="absolute inset-0 bg-soft-black/55" />
         </div>
 
         <div className="relative z-10 text-center px-6">
           <RevealOnScroll>
-            <span className="text-sm uppercase tracking-[0.3em] text-[#C9A9A6] mb-4 block">
+            <span className="fb-kicker-pill fb-kicker-pill--dark mb-6">
               Services
             </span>
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.1}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif text-[#FDFCF0] mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif text-antique-white mb-6 leading-[1.06] tracking-[-0.02em] drop-shadow-[0_12px_34px_rgba(0,0,0,0.55)]">
               Weddings & Events
             </h1>
           </RevealOnScroll>
 
+          <RevealOnScroll delay={0.15}>
+            <div className="fb-divider" />
+          </RevealOnScroll>
+
           <RevealOnScroll delay={0.2}>
-            <p className="text-xl text-[#FDFCF0]/80 max-w-2xl mx-auto">
+            <p className="text-xl text-antique-white/80 max-w-2xl mx-auto mt-6">
               Creating timeless floral designs for life&apos;s most celebrated
               moments
             </p>

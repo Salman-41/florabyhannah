@@ -22,7 +22,6 @@ export default function HeroSection({
       <span className="block lg:whitespace-nowrap">
         <span className="relative inline-block italic text-muted-rose">
           <span className="relative z-10">life and color</span>
-          <span className="pointer-events-none absolute -inset-x-2 -inset-y-1 -z-10 rounded-full bg-muted-rose/10" />
           <span className="pointer-events-none absolute left-1/2 bottom-0 h-px w-[calc(100%+0.9rem)] -translate-x-1/2 bg-linear-to-r from-transparent via-muted-rose/55 to-transparent" />
         </span>{" "}
         to your
