@@ -14,8 +14,7 @@ export default function Home() {
   const [introComplete, setIntroComplete] = useState(false);
 
   // Single source of truth: HeroIntro center image + HeroSection background match.
-  const HERO_IMAGE =
-    "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=2070&auto=format&fit=crop";
+  const HERO_IMAGE = "/images/hero%20image.jpg";
 
   return (
     <>
