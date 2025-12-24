@@ -63,24 +63,6 @@ export default function CTASection() {
           className="absolute bottom-16 left-12 w-24 h-24 sm:w-32 sm:h-32 text-antique-white/10 -rotate-6"
         />
 
-        {/* Animated floating circles */}
-        <motion.div
-          className="absolute top-20 left-[15%] w-64 h-64 rounded-full border border-antique-white/10"
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-[10%] w-96 h-96 rounded-full border border-muted-rose/10"
-          animate={{
-            scale: [1.1, 1, 1.1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-
         {/* Corner decorative lines */}
         <div className="absolute top-12 left-12 w-24 h-24">
           <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-muted-rose/40 to-transparent" />

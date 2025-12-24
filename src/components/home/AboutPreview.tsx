@@ -153,11 +153,11 @@ export default function AboutPreview() {
               <MagneticWrapper>
                 <Link
                   href="/about"
-                  className="group inline-flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-deep-sage hover:text-muted-rose transition-colors duration-300"
+                  className="group inline-flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-deep-sage hover:text-muted-rose transition-colors duration-300"
                 >
                   Read My Story
                   <motion.span
-                    className="flex items-center justify-center w-10 h-10 rounded-full border border-deep-sage group-hover:bg-deep-sage group-hover:text-antique-white transition-all duration-300"
+                    className="inline-block font-light"
                     whileHover={{ x: 5 }}
                   >
                     →

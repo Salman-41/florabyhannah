@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { FloralPattern, FloatingFlowers } from "@/components/animations";
 
@@ -182,62 +181,21 @@ export default function TestimonialSlider({
               }}
               className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
             >
-              <div className="fb-panel-light mx-auto w-full max-w-5xl px-6 sm:px-10 py-10 sm:py-12 shadow-sm">
-                {/* Rating stars at top */}
-                {testimonials[currentIndex].rating && (
-                  <div className="flex gap-2 mb-8">
-                    {[...Array(testimonials[currentIndex].rating)].map(
-                      (_, i) => (
-                        <motion.svg
-                          key={i}
-                          className="w-5 h-5 text-muted-rose"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          initial={{ opacity: 0, scale: 0 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: i * 0.1 }}
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </motion.svg>
-                      )
-                    )}
-                  </div>
-                )}
-
-                {/* Quote */}
-                <blockquote className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-serif text-charcoal leading-[1.35] max-w-4xl mx-auto mb-10">
+              <div className="mx-auto w-full max-w-4xl">
+                <blockquote className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-serif text-charcoal leading-[1.35]">
                   &ldquo;{testimonials[currentIndex].quote}&rdquo;
                 </blockquote>
 
-                {/* Author */}
-                <div className="flex flex-col items-center">
-                  {testimonials[currentIndex].image && (
-                    <motion.div
-                      className="w-16 h-16 rounded-full overflow-hidden mb-4 ring-2 ring-muted-rose/30 ring-offset-4 ring-offset-antique-white"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 0.2, type: "spring" }}
-                    >
-                      <Image
-                        src={testimonials[currentIndex].image}
-                        alt={testimonials[currentIndex].name}
-                        width={64}
-                        height={64}
-                        className="object-cover"
-                      />
-                    </motion.div>
-                  )}
-                  <div className="text-center">
-                    <p className="text-lg font-serif text-deep-sage">
-                      — {testimonials[currentIndex].name}
-                    </p>
-                    {testimonials[currentIndex].role && (
-                      <p className="text-sm text-warm-taupe mt-1">
-                        {testimonials[currentIndex].role}
-                      </p>
-                    )}
-                  </div>
+                <div className="mt-10">
+                  <div className="mx-auto h-px w-36 bg-linear-to-r from-transparent via-muted-rose/35 to-transparent" />
                 </div>
+
+                <p className="mt-8 text-sm sm:text-base uppercase tracking-[0.2em] text-deep-sage">
+                  — {testimonials[currentIndex].name}
+                  {testimonials[currentIndex].role
+                    ? `, ${testimonials[currentIndex].role}`
+                    : ""}
+                </p>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -247,7 +205,7 @@ export default function TestimonialSlider({
         <div className="flex items-center justify-center gap-8 mt-12">
           <motion.button
             onClick={() => paginate(-1)}
-            className="w-14 h-14 rounded-full border border-warm-taupe/50 flex items-center justify-center text-deep-sage hover:bg-deep-sage hover:text-antique-white hover:border-deep-sage transition-all duration-300"
+            className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-deep-sage hover:text-muted-rose transition-colors duration-300"
             aria-label="Previous testimonial"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -265,6 +223,9 @@ export default function TestimonialSlider({
                 d="M15 19l-7-7 7-7"
               />
             </svg>
+            <span className="border-b border-transparent hover:border-muted-rose/60">
+              Previous
+            </span>
           </motion.button>
 
           {/* Progress dots */}
@@ -276,17 +237,17 @@ export default function TestimonialSlider({
                   setDirection(index > currentIndex ? 1 : -1);
                   setCurrentIndex(index);
                 }}
-                className="relative p-1"
+                className="relative py-2 px-1"
                 aria-label={`Go to testimonial ${index + 1}`}
               >
                 <span
-                  className={`block w-2 h-2 rounded-full transition-all duration-500 ${
+                  className={`block h-px w-10 transition-all duration-500 ${
                     index === currentIndex ? "bg-deep-sage" : "bg-warm-taupe/40"
                   }`}
                 />
                 {index === currentIndex && (
                   <motion.span
-                    className="absolute inset-0 rounded-full border border-deep-sage"
+                    className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-deep-sage"
                     layoutId="activeTestimonial"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
@@ -297,11 +258,14 @@ export default function TestimonialSlider({
 
           <motion.button
             onClick={() => paginate(1)}
-            className="w-14 h-14 rounded-full border border-warm-taupe/50 flex items-center justify-center text-deep-sage hover:bg-deep-sage hover:text-antique-white hover:border-deep-sage transition-all duration-300"
+            className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-deep-sage hover:text-muted-rose transition-colors duration-300"
             aria-label="Next testimonial"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
+            <span className="border-b border-transparent hover:border-muted-rose/60">
+              Next
+            </span>
             <svg
               className="w-5 h-5"
               fill="none"
