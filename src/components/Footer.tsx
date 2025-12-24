@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FloatingFlowers } from "@/components/animations";
 
@@ -49,9 +50,19 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/">
-              <h2 className="text-3xl font-serif text-[#2D2D2D] mb-4">
-                Flora <span className="text-[#C9A9A6] italic">by Hannah</span>
-              </h2>
+              <div className="flex items-end gap-3 mb-4">
+                <Image
+                  src="/Flora%20logo.webp"
+                  alt="Flora"
+                  width={140}
+                  height={42}
+                  className="h-10 w-auto"
+                  priority={false}
+                />
+                <span className="text-3xl font-serif text-[#C9A9A6] italic leading-none">
+                  by Hannah
+                </span>
+              </div>
             </Link>
             <p className="text-[#2D2D2D]/70 leading-relaxed max-w-md mb-6">
               Creating classic and timeless floral designs that bring your most

@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { FloatingFlowers } from "@/components/animations";
 
@@ -143,7 +142,6 @@ export default function MasonryGrid({
   items = mockPortfolioItems,
 }: MasonryGridProps) {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const filteredItems =
     activeCategory === "All"
@@ -200,66 +198,23 @@ export default function MasonryGrid({
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
-              <Link
-                href={`/portfolio/${item.slug.current}`}
-                className="group block relative overflow-hidden cursor-expand"
-                onMouseEnter={() => setHoveredId(item._id)}
-                onMouseLeave={() => setHoveredId(null)}
-              >
+              <div className="block relative overflow-hidden">
                 <div
-                  className={`relative ${getRandomHeight(
-                    item._id
-                  )} bg-[#FAF9F5]`}
+                  className={`relative ${getRandomHeight(item._id)} bg-[#FAF9F5]`}
                 >
                   {item.mainImage ? (
                     <Image
                       src={item.mainImage}
                       alt={item.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   ) : (
                     <div className="absolute inset-0 bg-gradient-to-br from-[#C9A9A6]/30 to-[#4A5D4E]/30" />
                   )}
-
-                  {/* Overlay */}
-                  <motion.div
-                    className="absolute inset-0 bg-[#1A1A1A]/60 flex flex-col items-center justify-center text-center p-6"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: hoveredId === item._id ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <span className="text-xs uppercase tracking-[0.2em] text-[#C9A9A6] mb-2">
-                      {item.category}
-                    </span>
-                    <h3 className="text-2xl font-serif text-[#FDFCF0] mb-4">
-                      {item.title}
-                    </h3>
-                    <motion.div
-                      className="w-10 h-10 rounded-full border border-[#FDFCF0] flex items-center justify-center"
-                      whileHover={{
-                        scale: 1.1,
-                        backgroundColor: "rgba(253, 252, 240, 0.2)",
-                      }}
-                    >
-                      <svg
-                        className="w-4 h-4 text-[#FDFCF0]"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
-                    </motion.div>
-                  </motion.div>
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </AnimatePresence>
