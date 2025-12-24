@@ -8,7 +8,7 @@
   --muted-rose: #C9A9A6;
   --warm-taupe: #B8AFA6;
   --charcoal: #2D2D2D;
-  --soft-black: #1A1A1A;
+  --soft-black: #0f1a15; /* greenish black */
   
   /* Fonts */
     /* Note: we intentionally avoid build-time Google Font downloads.
@@ -29,7 +29,7 @@
   --color-muted-rose: #C9A9A6;
   --color-warm-taupe: #B8AFA6;
   --color-charcoal: #2D2D2D;
-  --color-soft-black: #1A1A1A;
+  --color-soft-black: #0f1a15; /* greenish black */
 }
 
 /*

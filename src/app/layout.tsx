@@ -3,8 +3,6 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import MagneticCursor from "@/components/MagneticCursor";
-import { TwentyFirstToolbar } from "@21st-extension/toolbar-next";
-import { ReactPlugin } from "@21st-extension/react";
 
 export const metadata: Metadata = {
   title: "Flora by Hannah | Wedding Florist in Charleston, SC",
@@ -35,7 +33,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased bg-[#FDFCF0] text-[#2D2D2D] w-full overflow-x-clip">
-        <TwentyFirstToolbar config={{ plugins: [ReactPlugin] }} />
         <MagneticCursor />
         <Navigation />
         <main className="min-h-screen w-full">{children}</main>
