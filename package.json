@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "@sanity/image-url": "^2.0.2",
+    "@sanity/vision": "^5.1.0",
     "@tailwindcss/typography": "^0.5.19",
     "@types/react-datepicker": "^6.2.0",
     "framer-motion": "^12.23.26",
@@ -17,7 +18,9 @@
     "next-sanity": "^12.0.5",
     "react": "19.2.3",
     "react-datepicker": "^9.1.0",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "sanity": "^5.1.0",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@21st-extension/react": "^0.5.14",

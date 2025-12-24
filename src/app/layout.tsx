@@ -1,23 +1,10 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import MagneticCursor from "@/components/MagneticCursor";
 import { TwentyFirstToolbar } from "@21st-extension/toolbar-next";
 import { ReactPlugin } from "@21st-extension/react";
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
 
 export const metadata: Metadata = {
   title: "Flora by Hannah | Wedding Florist in Charleston, SC",
@@ -47,9 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${cormorant.variable} ${inter.variable} antialiased bg-[#FDFCF0] text-[#2D2D2D] w-full overflow-x-clip`}
-      >
+      <body className="antialiased bg-[#FDFCF0] text-[#2D2D2D] w-full overflow-x-clip">
         <TwentyFirstToolbar config={{ plugins: [ReactPlugin] }} />
         <MagneticCursor />
         <Navigation />
