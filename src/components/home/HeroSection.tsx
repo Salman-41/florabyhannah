@@ -185,39 +185,15 @@ export default function HeroSection({
           >
             <Link
               href={ctaLink}
-              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-transparent text-antique-white text-xs uppercase tracking-[0.25em] overflow-hidden border border-antique-white/30 rounded-full drop-shadow-[0_10px_24px_rgba(0,0,0,0.45)]"
+              className="fb-btn fb-btn--sm fb-btn--outline-light w-full sm:w-auto drop-shadow-[0_10px_24px_rgba(0,0,0,0.45)] focus-visible:ring-offset-soft-black"
             >
-              <motion.span
-                className="absolute inset-0 bg-antique-white"
-                initial={{ y: "100%" }}
-                whileHover={{ y: 0 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-              />
-              <motion.span
-                className="relative z-10 inline-block transition-colors duration-500 group-hover:text-[#1a1a1a]"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {ctaText}
-              </motion.span>
+              {ctaText}
             </Link>
             <Link
               href="/contact"
-              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-muted-rose text-[#1a1a1a] text-xs uppercase tracking-[0.25em] overflow-hidden rounded-full drop-shadow-[0_12px_30px_rgba(0,0,0,0.45)]"
+              className="fb-btn fb-btn--sm fb-btn--rose w-full sm:w-auto drop-shadow-[0_12px_30px_rgba(0,0,0,0.45)] focus-visible:ring-offset-soft-black"
             >
-              <motion.span
-                className="absolute inset-0 bg-deep-sage"
-                initial={{ y: "100%" }}
-                whileHover={{ y: 0 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-              />
-              <motion.span
-                className="relative z-10 inline-block transition-colors duration-500 group-hover:text-antique-white"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Book Consultation
-              </motion.span>
+              Book Consultation
             </Link>
           </motion.div>
         </motion.div>

@@ -205,7 +205,7 @@ export default function TestimonialSlider({
         <div className="flex items-center justify-center gap-8 mt-12">
           <motion.button
             onClick={() => paginate(-1)}
-            className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-deep-sage hover:text-muted-rose transition-colors duration-300"
+            className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-deep-sage hover:text-muted-rose transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted-rose/50 focus-visible:ring-offset-2 focus-visible:ring-offset-antique-white"
             aria-label="Previous testimonial"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -223,7 +223,7 @@ export default function TestimonialSlider({
                 d="M15 19l-7-7 7-7"
               />
             </svg>
-            <span className="border-b border-transparent hover:border-muted-rose/60">
+            <span className="border-b border-transparent group-hover:border-muted-rose/60 transition-colors duration-300">
               Previous
             </span>
           </motion.button>
@@ -258,12 +258,12 @@ export default function TestimonialSlider({
 
           <motion.button
             onClick={() => paginate(1)}
-            className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-deep-sage hover:text-muted-rose transition-colors duration-300"
+            className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-deep-sage hover:text-muted-rose transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted-rose/50 focus-visible:ring-offset-2 focus-visible:ring-offset-antique-white"
             aria-label="Next testimonial"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="border-b border-transparent hover:border-muted-rose/60">
+            <span className="border-b border-transparent group-hover:border-muted-rose/60 transition-colors duration-300">
               Next
             </span>
             <svg

@@ -153,15 +153,9 @@ export default function AboutPreview() {
               <MagneticWrapper>
                 <Link
                   href="/about"
-                  className="group inline-flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-deep-sage hover:text-muted-rose transition-colors duration-300"
+                  className="fb-btn fb-btn--sm fb-btn--rose inline-flex items-center gap-3"
                 >
-                  Read My Story
-                  <motion.span
-                    className="inline-block font-light"
-                    whileHover={{ x: 5 }}
-                  >
-                    →
-                  </motion.span>
+                  Read My Story <span aria-hidden>→</span>
                 </Link>
               </MagneticWrapper>
             </RevealOnScroll>

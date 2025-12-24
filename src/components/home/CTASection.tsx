@@ -198,21 +198,9 @@ export default function CTASection() {
         >
           <Link
             href="/contact"
-            className="group relative inline-flex items-center justify-center px-14 py-5 bg-antique-white text-[#1a1a1a] text-sm uppercase tracking-[0.25em] overflow-hidden rounded-full drop-shadow-[0_14px_34px_rgba(0,0,0,0.45)]"
+            className="fb-btn fb-btn--md fb-btn--light inline-flex drop-shadow-[0_14px_34px_rgba(0,0,0,0.45)] focus-visible:ring-offset-soft-black"
           >
-            <motion.span
-              className="absolute inset-0 bg-deep-sage"
-              initial={{ y: "100%" }}
-              whileHover={{ y: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-            />
-            <motion.span
-              className="relative z-10 transition-colors duration-500 group-hover:text-antique-white"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Schedule a Consultation
-            </motion.span>
+            Schedule a Consultation
           </Link>
         </motion.div>
 

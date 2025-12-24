@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -139,24 +138,12 @@ export default function FeaturedWeddings({
             </div>
             <Link
               href="/portfolio"
-              className="group relative inline-flex items-center gap-4 overflow-hidden rounded-full border border-[#FDFCF0]/20 px-8 py-4 text-xs uppercase tracking-[0.25em] text-[#FDFCF0] shadow-sm transition-colors duration-300 hover:border-[#C9A9A6]/70 self-start lg:self-end"
+              className="fb-btn fb-btn--sm fb-btn--outline-light inline-flex items-center gap-3 self-start lg:self-end shadow-sm focus-visible:ring-offset-soft-black"
             >
-              <span className="relative z-10 font-light transition-colors duration-300 group-hover:text-[#1a1a1a]">
-                Explore Gallery
-              </span>
-              <motion.span
-                className="relative z-10 flex items-center justify-center w-9 h-9 rounded-full bg-[#C9A9A6]/14 text-[#C9A9A6] transition-all duration-300 group-hover:bg-[#1a1a1a]/12 group-hover:text-[#1a1a1a]"
-                whileHover={{ rotate: 45 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-              >
+              <span className="font-light">Explore Gallery</span>
+              <span aria-hidden className="text-sm">
                 →
-              </motion.span>
-              <motion.div
-                className="absolute inset-0 bg-[#C9A9A6]"
-                initial={{ x: "-105%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.45, ease: "easeInOut" }}
-              />
+              </span>
             </Link>
           </div>
         </div>

@@ -98,6 +98,43 @@ h1, h2, h3, h4, h5, h6 {
   .fb-panel-dark {
     @apply rounded-3xl border border-antique-white/14 bg-soft-black/22 backdrop-blur-sm;
   }
+
+  /* Buttons */
+  .fb-btn {
+    @apply relative inline-flex items-center justify-center overflow-hidden rounded-full uppercase tracking-[0.25em] transition-all duration-300;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted-rose/60 focus-visible:ring-offset-2;
+  }
+
+  .fb-btn--sm {
+    @apply px-8 sm:px-12 py-4 text-xs;
+  }
+
+  .fb-btn--md {
+    @apply px-14 py-5 text-sm;
+  }
+
+  .fb-btn--outline-light {
+    @apply border border-antique-white/30 bg-transparent text-antique-white;
+    @apply hover:border-muted-rose/70 hover:bg-antique-white hover:text-deep-taupe;
+  }
+
+  .fb-btn--light {
+    @apply bg-antique-white text-deep-taupe;
+    @apply hover:bg-muted-rose/90;
+  }
+
+  .fb-btn--rose {
+    @apply bg-muted-rose text-deep-taupe;
+    @apply hover:bg-muted-rose/90;
+  }
+
+  .fb-btn-fill {
+    @apply absolute inset-0;
+  }
+
+  .fb-btn-label {
+    @apply relative z-10 inline-block transition-colors duration-500;
+  }
 }
 
 /* Custom Scrollbar */
