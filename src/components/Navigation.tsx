@@ -19,6 +19,11 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  // Many inner pages have very light hero sections; keep the nav readable there
+  // without redesigning the navigation.
+  const isHome = pathname === "/";
+  const useLightHeader = scrolled || !isHome;
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -32,21 +37,21 @@ export default function Navigation() {
     <>
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-2 sm:px-4 ${
-          scrolled
-            ? "bg-[#FDFCF0]/95 backdrop-blur-md shadow-sm"
+          useLightHeader
+            ? "bg-antique-white/95 backdrop-blur-md shadow-sm"
             : "bg-transparent"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <nav className="max-w-7xl mx-auto px-4 lg:px-12 py-4 lg:py-6">
+        <nav className="max-w-7xl mx-auto px-4 lg:px-12 py-3 lg:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="group">
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="relative h-12 w-40 lg:h-14 lg:w-48"
+                className="relative h-10 w-32 sm:h-11 sm:w-36 lg:h-12 lg:w-40"
               >
                 <Image
                   src="/Flora logo.webp"
@@ -59,7 +64,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-10">
+            <div className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -69,18 +74,18 @@ export default function Navigation() {
                   <span
                     className={`text-sm tracking-[0.15em] uppercase transition-colors duration-300 ${
                       pathname === link.href
-                        ? scrolled
-                          ? "text-[#4A5D4E]"
-                          : "text-[#FDFCF0]"
-                        : scrolled
-                          ? "text-[#2D2D2D] hover:text-[#4A5D4E]"
-                          : "text-[#FDFCF0] hover:text-[#C9A9A6]"
+                        ? useLightHeader
+                          ? "text-deep-sage"
+                          : "text-antique-white"
+                        : useLightHeader
+                          ? "text-charcoal hover:text-deep-sage"
+                          : "text-antique-white hover:text-muted-rose"
                     }`}
                   >
                     {link.label}
                   </span>
                   <motion.span
-                    className="absolute -bottom-1 left-0 h-[1px] bg-[#C9A9A6]"
+                    className="absolute -bottom-1 left-0 h-px bg-muted-rose"
                     initial={{ width: pathname === link.href ? "100%" : "0%" }}
                     whileHover={{ width: "100%" }}
                     transition={{ duration: 0.3 }}
@@ -96,7 +101,7 @@ export default function Navigation() {
               aria-label="Toggle menu"
             >
               <motion.span
-                className={`w-6 h-[1px] absolute ${scrolled ? "bg-[#2D2D2D]" : "bg-[#FDFCF0]"}`}
+                className={`w-6 h-px absolute ${useLightHeader ? "bg-charcoal" : "bg-antique-white"}`}
                 animate={{
                   rotate: isOpen ? 45 : 0,
                   y: isOpen ? 0 : -6,
@@ -104,14 +109,14 @@ export default function Navigation() {
                 transition={{ duration: 0.3 }}
               />
               <motion.span
-                className={`w-6 h-[1px] absolute ${scrolled ? "bg-[#2D2D2D]" : "bg-[#FDFCF0]"}`}
+                className={`w-6 h-px absolute ${useLightHeader ? "bg-charcoal" : "bg-antique-white"}`}
                 animate={{
                   opacity: isOpen ? 0 : 1,
                 }}
                 transition={{ duration: 0.3 }}
               />
               <motion.span
-                className={`w-6 h-[1px] absolute ${scrolled ? "bg-[#2D2D2D]" : "bg-[#FDFCF0]"}`}
+                className={`w-6 h-px absolute ${useLightHeader ? "bg-charcoal" : "bg-antique-white"}`}
                 animate={{
                   rotate: isOpen ? -45 : 0,
                   y: isOpen ? 0 : 6,
@@ -127,7 +132,7 @@ export default function Navigation() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-40 lg:hidden bg-[#FDFCF0]"
+            className="fixed inset-0 z-40 lg:hidden bg-antique-white"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -147,8 +152,8 @@ export default function Navigation() {
                     onClick={() => setIsOpen(false)}
                     className={`text-3xl font-serif tracking-wide ${
                       pathname === link.href
-                        ? "text-[#4A5D4E]"
-                        : "text-[#2D2D2D] hover:text-[#C9A9A6]"
+                        ? "text-deep-sage"
+                        : "text-charcoal hover:text-muted-rose"
                     } transition-colors duration-300`}
                   >
                     {link.label}
