@@ -103,36 +103,61 @@ export default function FeaturedWeddings({
         <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-20 lg:mb-24 relative z-10">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
             <div className="max-w-2xl">
+              {/* Badge + micro-ornament (matches other sections) */}
               <div className="flex items-center gap-4 mb-8">
-                <span className="w-16 h-px bg-[#C9A9A6]" />
-                <span className="text-xs uppercase tracking-[0.4em] text-[#C9A9A6] font-light">
-                  Our Portfolio
+                <span className="hidden sm:block w-16 h-px bg-[#C9A9A6]/80" />
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#FDFCF0]/15 bg-[#FDFCF0]/5 px-4 py-2 backdrop-blur-md">
+                  <span className="text-xs uppercase tracking-[0.35em] text-[#C9A9A6] font-light">
+                    Our Portfolio
+                  </span>
+                  <span className="relative w-5 h-5">
+                    <FloralPattern
+                      variant="blossom"
+                      animate={false}
+                      className="absolute inset-0 w-5 h-5 text-[#C9A9A6]/70"
+                    />
+                  </span>
                 </span>
               </div>
-              <h2 className="text-5xl lg:text-7xl font-serif text-[#FDFCF0] leading-[1.1] mb-6">
-                Featured
-                <br />
-                <span className="italic text-[#C9A9A6]">Wedding Florals</span>
-              </h2>
-              <p className="text-base lg:text-lg text-[#FDFCF0]/60 leading-relaxed font-light max-w-xl">
-                Each celebration tells a unique story through carefully curated
-                blooms and designs that capture the essence of your special day.
-              </p>
+
+              {/* Soft panel behind copy for a more premium, cohesive look */}
+              <div className="relative">
+                <div className="absolute -inset-6 sm:-inset-8 rounded-3xl bg-linear-to-br from-[#FDFCF0]/6 via-transparent to-[#C9A9A6]/6 blur-sm" />
+                <div className="relative">
+                  <h2 className="text-5xl lg:text-7xl font-serif text-[#FDFCF0] leading-[1.05] mb-6">
+                    Featured{" "}
+                    <span className="italic text-[#C9A9A6]">
+                      Wedding Florals
+                    </span>
+                  </h2>
+                  <p className="text-base lg:text-lg text-[#FDFCF0]/65 leading-relaxed font-light max-w-xl">
+                    Each celebration tells a unique story through carefully
+                    curated blooms and designs that capture the essence of your
+                    special day.
+                  </p>
+                </div>
+              </div>
             </div>
             <Link
               href="/portfolio"
-              className="group inline-flex items-center gap-4 self-start lg:self-end px-8 py-4 border border-[#FDFCF0]/20 hover:border-[#C9A9A6] rounded-full transition-all duration-500 hover:shadow-lg hover:shadow-[#C9A9A6]/10"
+              className="group relative inline-flex items-center gap-4 overflow-hidden rounded-full border border-[#FDFCF0]/20 px-8 py-4 text-xs uppercase tracking-[0.25em] text-[#FDFCF0] shadow-sm transition-colors duration-300 hover:border-[#C9A9A6]/70 self-start lg:self-end"
             >
-              <span className="text-sm uppercase tracking-[0.25em] text-[#FDFCF0] group-hover:text-[#C9A9A6] transition-colors duration-300 font-light">
+              <span className="relative z-10 font-light transition-colors duration-300 group-hover:text-[#1a1a1a]">
                 Explore Gallery
               </span>
               <motion.span
-                className="flex items-center justify-center w-8 h-8 rounded-full bg-[#C9A9A6]/10 text-[#C9A9A6] group-hover:bg-[#C9A9A6] group-hover:text-[#1a1a1a] transition-all duration-300"
-                whileHover={{ scale: 1.1, rotate: 45 }}
-                whileTap={{ scale: 0.95 }}
+                className="relative z-10 flex items-center justify-center w-9 h-9 rounded-full bg-[#C9A9A6]/14 text-[#C9A9A6] transition-all duration-300 group-hover:bg-[#1a1a1a]/12 group-hover:text-[#1a1a1a]"
+                whileHover={{ rotate: 45 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
               >
                 →
               </motion.span>
+              <motion.div
+                className="absolute inset-0 bg-[#C9A9A6]"
+                initial={{ x: "-105%" }}
+                whileHover={{ x: 0 }}
+                transition={{ duration: 0.45, ease: "easeInOut" }}
+              />
             </Link>
           </div>
         </div>
