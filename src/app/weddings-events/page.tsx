@@ -293,7 +293,7 @@ export default function WeddingsEventsPage() {
             <RevealOnScroll direction="left">
               <div className="relative aspect-square overflow-hidden bg-[#FAF9F5]">
                 <Image
-                  src="/images/events-section.jpg"
+                  src="/images/hero%20image.jpg"
                   alt="Corporate Events"
                   fill
                   className="object-cover"

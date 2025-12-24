@@ -43,8 +43,7 @@ const mockWeddings: Wedding[] = [
     title: "Blush & Bloom",
     slug: { current: "blush-and-bloom" },
     venue: "Boone Hall",
-    coverImage:
-      "https://images.unsplash.com/photo-1561128290-006dc4827e9a?q=80&w=1974&auto=format&fit=crop",
+    coverImage: "/images/hero%20image.jpg",
     category: "Bouquets",
   },
   {

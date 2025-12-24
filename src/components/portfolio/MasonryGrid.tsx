@@ -40,8 +40,7 @@ const mockPortfolioItems: PortfolioItem[] = [
     title: "Bridal Cascade",
     slug: { current: "bridal-cascade" },
     category: "Bouquets",
-    mainImage:
-      "https://images.unsplash.com/photo-1561128290-006dc4827e9a?q=80&w=1974&auto=format&fit=crop",
+    mainImage: "/images/hero%20image.jpg",
     tags: ["bridal", "cascade"],
   },
   {

@@ -18,9 +18,16 @@ interface HeroSectionProps {
 export default function HeroSection({
   title = (
     <>
-      Floral design that brings{" "}
-      <span className="italic text-muted-rose">life and color</span> to your
-      most special days
+      <span className="block">Floral design that brings</span>
+      <span className="block lg:whitespace-nowrap">
+        <span className="relative inline-block italic text-muted-rose">
+          <span className="relative z-10">life and color</span>
+          <span className="pointer-events-none absolute -inset-x-2 -inset-y-1 -z-10 rounded-full bg-muted-rose/10" />
+          <span className="pointer-events-none absolute left-1/2 bottom-0 h-px w-[calc(100%+0.9rem)] -translate-x-1/2 bg-linear-to-r from-transparent via-muted-rose/55 to-transparent" />
+        </span>{" "}
+        to your
+      </span>
+      <span className="block lg:whitespace-nowrap">most special days</span>
     </>
   ),
   subtitle,
@@ -101,6 +108,8 @@ export default function HeroSection({
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(26,26,26,0.55)_0%,rgba(26,26,26,0.18)_48%,transparent_74%)]" />
             <div className="absolute inset-x-0 top-24 bottom-16 bg-linear-to-b from-soft-black/0 via-soft-black/12 to-soft-black/0" />
+            {/* Romantic glow (very subtle) */}
+            <div className="absolute left-1/2 top-[52%] h-112 w-[min(92vw,56rem)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(201,169,166,0.18)_0%,rgba(201,169,166,0.08)_40%,transparent_72%)] blur-2xl" />
           </div>
 
           {/* Decorative top element */}
@@ -131,7 +140,7 @@ export default function HeroSection({
           </motion.div>
 
           <motion.span
-            className="text-xs md:text-sm uppercase tracking-[0.4em] text-muted-rose mb-6 font-light drop-shadow-[0_6px_18px_rgba(0,0,0,0.55)]"
+            className="inline-flex items-center text-xs md:text-sm uppercase tracking-[0.4em] text-muted-rose mb-7 font-light px-5 py-2 rounded-full border border-antique-white/10 bg-soft-black/28 backdrop-blur-sm drop-shadow-[0_10px_26px_rgba(0,0,0,0.40)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -140,13 +149,23 @@ export default function HeroSection({
           </motion.span>
 
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-antique-white max-w-5xl leading-[1.15] mb-8 drop-shadow-[0_10px_28px_rgba(0,0,0,0.65)]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-normal text-antique-white max-w-[18ch] lg:max-w-[26ch] leading-[1.06] tracking-[-0.02em] mb-8 drop-shadow-[0_12px_34px_rgba(0,0,0,0.62)]"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
             {title}
           </motion.h1>
+
+          {/* Delicate divider for a more romantic/premium feel */}
+          <motion.div
+            className="mb-10 sm:mb-12"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.55 }}
+          >
+            <div className="mx-auto h-px w-44 bg-linear-to-r from-transparent via-muted-rose/45 to-transparent" />
+          </motion.div>
 
           {subtitle && (
             <motion.p
@@ -167,7 +186,7 @@ export default function HeroSection({
           >
             <Link
               href={ctaLink}
-              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-transparent text-antique-white text-xs uppercase tracking-[0.25em] overflow-hidden border border-antique-white/30 drop-shadow-[0_10px_24px_rgba(0,0,0,0.45)]"
+              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-transparent text-antique-white text-xs uppercase tracking-[0.25em] overflow-hidden border border-antique-white/30 rounded-full drop-shadow-[0_10px_24px_rgba(0,0,0,0.45)]"
             >
               <motion.span
                 className="absolute inset-0 bg-antique-white"
@@ -185,7 +204,7 @@ export default function HeroSection({
             </Link>
             <Link
               href="/contact"
-              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-muted-rose text-[#1a1a1a] text-xs uppercase tracking-[0.25em] overflow-hidden drop-shadow-[0_12px_30px_rgba(0,0,0,0.45)]"
+              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-muted-rose text-[#1a1a1a] text-xs uppercase tracking-[0.25em] overflow-hidden rounded-full drop-shadow-[0_12px_30px_rgba(0,0,0,0.45)]"
             >
               <motion.span
                 className="absolute inset-0 bg-deep-sage"
