@@ -56,10 +56,10 @@ export default function HeroSection({
           sizes="100vw"
         />
         {/* Multi-layer gradient overlay for depth and text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/45 via-[#1A1A1A]/20 to-[#1A1A1A]/55" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/25 via-transparent to-[#1A1A1A]/25" />
+        <div className="absolute inset-0 bg-linear-to-b from-soft-black/65 via-soft-black/25 to-soft-black/70" />
+        <div className="absolute inset-0 bg-linear-to-r from-soft-black/30 via-transparent to-soft-black/30" />
         {/* Subtle vignette effect */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(253,252,240,0.12)_0%,_rgba(26,26,26,0.32)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(253,252,240,0.10)_0%,rgba(26,26,26,0.58)_100%)]" />
       </motion.div>
 
       {/* Floating Floral Patterns */}
@@ -97,6 +97,12 @@ export default function HeroSection({
           className="relative z-10 min-h-[100svh] flex flex-col items-center justify-center text-center px-6 pt-24 sm:pt-28 pb-16 sm:pb-20"
           style={{ opacity }}
         >
+          {/* Center readability veil (keeps the vibe, makes text always legible) */}
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(26,26,26,0.55)_0%,rgba(26,26,26,0.18)_48%,transparent_74%)]" />
+            <div className="absolute inset-x-0 top-24 bottom-16 bg-linear-to-b from-soft-black/0 via-soft-black/12 to-soft-black/0" />
+          </div>
+
           {/* Decorative top element */}
           <motion.div
             className="mb-6"
@@ -125,7 +131,7 @@ export default function HeroSection({
           </motion.div>
 
           <motion.span
-            className="text-xs md:text-sm uppercase tracking-[0.4em] text-[#C9A9A6] mb-6 font-light"
+            className="text-xs md:text-sm uppercase tracking-[0.4em] text-[#C9A9A6] mb-6 font-light drop-shadow-[0_6px_18px_rgba(0,0,0,0.55)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -134,7 +140,7 @@ export default function HeroSection({
           </motion.span>
 
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-[#FDFCF0] max-w-5xl leading-[1.15] mb-8"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-[#FDFCF0] max-w-5xl leading-[1.15] mb-8 drop-shadow-[0_10px_28px_rgba(0,0,0,0.65)]"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
@@ -159,39 +165,41 @@ export default function HeroSection({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <Link href={ctaLink}>
-              <motion.button
-                className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-transparent text-[#FDFCF0] text-xs uppercase tracking-[0.25em] overflow-hidden border border-[#FDFCF0]/30"
+            <Link
+              href={ctaLink}
+              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-transparent text-[#FDFCF0] text-xs uppercase tracking-[0.25em] overflow-hidden border border-[#FDFCF0]/30 drop-shadow-[0_10px_24px_rgba(0,0,0,0.45)]"
+            >
+              <motion.span
+                className="absolute inset-0 bg-[#FDFCF0]"
+                initial={{ y: "100%" }}
+                whileHover={{ y: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              />
+              <motion.span
+                className="relative z-10 inline-block transition-colors duration-500 group-hover:text-[#1a1a1a]"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="relative z-10 transition-colors duration-500 group-hover:text-[#1a1a1a]">
-                  {ctaText}
-                </span>
-                <motion.div
-                  className="absolute inset-0 bg-[#FDFCF0]"
-                  initial={{ y: "100%" }}
-                  whileHover={{ y: 0 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                />
-              </motion.button>
+                {ctaText}
+              </motion.span>
             </Link>
-            <Link href="/contact">
-              <motion.button
-                className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-[#C9A9A6] text-[#1a1a1a] text-xs uppercase tracking-[0.25em] overflow-hidden"
+            <Link
+              href="/contact"
+              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 bg-[#C9A9A6] text-[#1a1a1a] text-xs uppercase tracking-[0.25em] overflow-hidden drop-shadow-[0_12px_30px_rgba(0,0,0,0.45)]"
+            >
+              <motion.span
+                className="absolute inset-0 bg-[#4A5D4E]"
+                initial={{ y: "100%" }}
+                whileHover={{ y: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              />
+              <motion.span
+                className="relative z-10 inline-block transition-colors duration-500 group-hover:text-[#FDFCF0]"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="relative z-10 transition-colors duration-500 group-hover:text-[#FDFCF0]">
-                  Book Consultation
-                </span>
-                <motion.div
-                  className="absolute inset-0 bg-[#4A5D4E]"
-                  initial={{ y: "100%" }}
-                  whileHover={{ y: 0 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                />
-              </motion.button>
+                Book Consultation
+              </motion.span>
             </Link>
           </motion.div>
         </motion.div>
