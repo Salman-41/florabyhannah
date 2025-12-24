@@ -3,6 +3,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import MagneticCursor from "@/components/MagneticCursor";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Flora by Hannah | Wedding Florist in Charleston, SC",
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Navigation />
         <main className="min-h-screen w-full">{children}</main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
